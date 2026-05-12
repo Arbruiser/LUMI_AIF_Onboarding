@@ -60,7 +60,7 @@ When you are asked for your passphrase, you won't see any characters appear as y
 > [!note]
 > When you are done with your session, simply type `exit` in the terminal or press "ctrl+d" to securely disconnect from LUMI.
 
-![Logging into LUMI in terminal](public/assets/LUMI_logged_in_terminal.png)
+![Logging into LUMI in terminal](./assets/LUMI_logged_in_terminal.png)
 
 ### Option B: The Web Interface (Browser-based)
 
@@ -68,7 +68,7 @@ If you are on a restricted work laptop where you cannot configure SSH, or if you
 
 [👉 Accessing LUMI via the Web Interface](https://docs.lumi-supercomputer.eu/firststeps/loggingin-webui/)
 
-![Logging into LUMI command line via web interface](public/assets/LUMI_logged_in_browser.png)
+![Logging into LUMI command line via web interface](./assets/LUMI_logged_in_browser.png)
 
 ---
 
