@@ -3,11 +3,83 @@ title: "Chapter 4: Navigating LUMI (Nodes and Storage)"
 nav_order: 4
 ---
 
-# Content
+
+
+# Chapter 4: Navigating LUMI (Nodes and Storage)
+
+Think of LUMI not as one giant entity, but as a massive *collection* of computers connected by an incredibly fast network.
+
+---
+
+## The "Two-Room" Rule: Login vs. Compute
+
+When you log in via SSH (as we did in Chapter 2), you aren't actually on the "super" part of the supercomputer yet. You are in the **Lobby**.
+
+### 1. The Login Nodes (The Lobby)
+The login nodes are shared by hundreds of people at once. Login nodes are named `uan01`, `uan02`, etc.
+*   **What to do here:** Organize files, write code in `nano`, check your project balance, and submit your "work orders" (jobs).
+*   **What NOT to do:** Do not run anything computationally heavy, such as AI training or heavy data processing here. If the "Lobby" gets too crowded or someone starts heavy machinery there, it slows down for everyone. LUMI has automatic guards that will stop your processes if they use too much power in the Lobby. For such heavy processes, use ...
+
+### 2. The Compute Nodes (The Factory Floor)
+This is where the magic happens. These are thousands of individual computers equipped with world-class GPUs and CPUs.
+*   **How to get there:** You cannot "log in" to a compute node directly. Instead, you "book" time on them using the Slurm scheduler (which we will cover in Chapter 5). Unlike the Login Node, you don't share CPUs and GPUs 
+
+> [!note]
+> You can see your current location from the Command Line Prompt: 
+> ![uan2 prompt](./assets/uan2_command_line_prompt.png). The `@uan2` in the prompt indicates that you are that login node. Compute nodes will have longer names like `nid007628`.
+
+---
+
+## 🏎️ Choosing Your Engine: CPU vs. GPU
+
+**What is a CPU?** The CPU (Central Processing Unit) is the general-purpose brain of a computer. It is designed to handle a few complex tasks very quickly, one after another in a sequence.
+**What is a GPU?** The GPU (Graphics Processing Unit) is designed to handle thousands of simple tasks simultaneously. Originally created to calculate the color of millions of pixels on a screen all at once for video games, researchers realized that this ability to do massive simultaneous (parallel) calculations is exactly the kind of math required for Artificial Intelligence. While you technically *can* run AI applications on a CPU, it would be incredibly slow.
+
+
+LUMI is divided into two main "partitions" (sections) depending on what kind of hardware you need:
+
+*   **LUMI-G (The GPU Powerhouse):** This is the heart of the AI Factory. It contains 11,000 of **AMD MI250X GPUs**. If you are training or using Large Language Models (LLMs) or computer vision models, this is where you want to be.
+*   **LUMI-C (The CPU Workhorse):** These nodes have powerful processors but no GPUs. They are great for data preprocessing, traditional statistics, or "cleaning" your data before the AI training begins.
+
+Within those **hardware** partitions, there are something known as **Slurm partitions**. Don't be intimidated by the name, we will cover Slurm in the next chapter. For now, view the hardware partitions 
+
+[👉 Full list of LUMI Partitions and their specs](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/partitions/)
+
+---
+
+## 📂 Where Does My Data Live? (Storage Tiers)
+
+On your laptop, everything is usually on one "C: Drive." On LUMI, storage is split into different tiers. Using the wrong one can make your AI training run 10x slower!
+
+| Storage Name | Path Prefix | Purpose | Analogy |
+| :--- | :--- | :--- | :--- |
+| **Home** | `/home/project_...` | Small scripts and settings. | **Your Pocket:** Always with you, but very small. |
+| **Project** | `/project/project_...` | Shared files for your whole team. | **The Filing Cabinet:** Safe and organized for long-term storage. |
+| **Scratch** | `/scratch/project_...` | **Where AI training happens.** | **The Workbench:** Massive and incredibly fast, but temporary. |
+
+> [!warning]
+> The `/scratch` directory is built for speed. It is where your AI model reads data from while training. However, it is **temporary**. If a file in `/scratch` isn't touched for 90 days, it may be automatically deleted to make room for others. **Always move your final trained models back to `/project`!**
+
+[👉 More detailed guide on LUMI Storage](https://docs.lumi-supercomputer.eu/storage/)
+
+---
+
+## 🚚 Moving Your Data to LUMI
+
+As an industry customer, you likely have your own datasets ready to go. To get them onto LUMI:
+
+1.  **Small Files:** Use the "Upload" button in the [LUMI Web Interface](https://www.lumi.csc.fi).
+2.  **Large Datasets:** Use `scp` or `rsync` from your terminal. These tools are designed to handle gigabytes or terabytes of data reliably.
+
+[👉 How to move your data to LUMI](https://docs.lumi-supercomputer.eu/firststeps/movingdata/)
+
+---
+
+
+
+
 
 [LUMI Slurm partitions](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/partitions/)
-
-GPU nodes and CPU nodes and when to use either. 
 
 
 ## Data storage on LUMI

@@ -74,8 +74,8 @@ The best way to learn after having studied some theory is to **practice**. Let's
     - Save the file by pressing **ctrl+S**. To help you remember, "S" in this case stands for "**s**ave",
     - Exit by pressing **ctrl+X**. "X" stands for "e**x**it". 
 
-    {: .note }
-    > **Note:** The command `nano <filename>` is used to open an existing file or create a new file with that name if it doesn't exist. 
+    > [!info]
+    > The command `nano <filename>` is used to open an existing file or create a new file with that name if it doesn't exist. 
 
 5. **Look at the file:**
     ```bash
@@ -84,15 +84,15 @@ The best way to learn after having studied some theory is to **practice**. Let's
     
     *Press **q** to exit the less viewer.*
 
-    {: .note }
-    > **Tip:** Instead of typing the whole name of an existing file (such as in step 5), you can type the first few characters of its name (such as `less fir`) and press TAB, will automatically finish the name. If there are multiple files that start with the same few characters, press TAB twice to see available options. 
+    > [!tip]
+    > Instead of typing the whole name of an existing file (such as in step 5), you can type the first few characters of its name (such as `less fir`) and press TAB, will automatically finish the name. If there are multiple files that start with the same few characters, press TAB twice to see available options. 
 
 6. **Upload a file**. To upload an image from your machine (PC/laptop) to LUMI, one way is to use the web interface:
     - Open [www.lumi.csc.fi](www.lumi.csc.fi) in your browser (don't close your terminal!), log in and go to `Home directory`. This is your `$HOME` user directory where we were working in the previous steps. There you should see our `first_dir` with `first_file.txt` in it.
     - Click "Upload" and upload your image to your `$HOME` directory. 
 
-    {: .note }
-    > **Tip:** Another, more 'professional' way of uploading files is to use `scp` command as [described here](https://docs.lumi-supercomputer.eu/firststeps/movingdata/).
+    > [!tip]
+    > Another, more 'professional' way of uploading files is to use `scp` command as [described here](https://docs.lumi-supercomputer.eu/firststeps/movingdata/).
 
 7. Open your terminal. Go back to the "parent directory" of the current working directory: 
 
@@ -119,9 +119,6 @@ The best way to learn after having studied some theory is to **practice**. Let's
 10. Great job! Now you can disconnect from LUMI by pressing **ctrl+D**. The command prompt has changed, in Linux or MacOS to `your_username_on_your_computer @ the_name_of_your_computer` or `C:\Users\Name` on Windows. This means that you're back to **your machine** in the terminal. 
 
 You can learn more about Linux Command Line on the ['Linux basics tutorial for CSC'](https://docs.csc.fi/support/tutorials/env-guide/) page. 
-
->[!warning] Note to self:
-> Still not covered: `git clone` a GitHub repo (and what they are).
 
 ## Your Command Line dheatsheet
 
