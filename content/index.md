@@ -6,7 +6,13 @@ nav_order: 1
 # LUMI AIF onboarding materials
 Welcome! You are here because you are ready to take a massive leap in AI development using [LUMI](https://lumi-supercomputer.eu/), one of the most powerful and "green" supercomputers in the world.
 
-The LUMI AI Factory is designed to bridge the gap between supercomputers and their usage by the industry. Whether you are part of a startup scaling your first LLM or an established company optimizing complex simulations, this guide is your first step toward mastering the machine.
+The LUMI AI Factory is designed to bridge the gap between supercomputers and their usage by the industry. Whether you are part of a startup scaling your first Large Language Model (LLM) or an established company optimizing complex simulations, this guide is your first step toward mastering the machine. 
+
+Upon completion of this guide, you will: 
+- Understand the basics of working on a supercomputer using the Command Line interface. 
+- Become familiar with Slurm job scheduler and be able to run your own jobs on LUMI.
+- Be prepared to follow a more advanced guide on using LUMI - [LUMI AI Guide](https://github.com/Lumi-supercomputer/LUMI-AI-Guide), which includes running and using LLMs.
+- Know where to turn for help and where to look for example scripts for your usecase.
 
 ![LUMI](./assets/LUMI_supercomputer.jpg)
 

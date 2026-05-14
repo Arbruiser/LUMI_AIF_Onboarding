@@ -3,8 +3,6 @@ title: "Chapter 4: Navigating LUMI (Nodes and Storage)"
 nav_order: 4
 ---
 
-
-
 # Chapter 4: Navigating LUMI (Nodes and Storage)
 
 Think of LUMI not as one giant entity, but as a massive *collection* of computers connected by an incredibly fast network.
@@ -38,10 +36,24 @@ This is where the magic happens. These are thousands of individual computers equ
 
 LUMI is divided into two main "partitions" (sections) depending on what kind of hardware you need:
 
-*   **LUMI-G (The GPU Powerhouse):** This is the heart of the AI Factory. It contains 11,000 of **AMD MI250X GPUs**. If you are training or using Large Language Models (LLMs) or computer vision models, this is where you want to be.
 *   **LUMI-C (The CPU Workhorse):** These nodes have powerful processors but no GPUs. They are great for data preprocessing, traditional statistics, or "cleaning" your data before the AI training begins.
+*   **LUMI-G (The GPU Powerhouse):** This is the heart of the AI Factory. It contains 11,000 of **AMD MI250X GPUs**. If you are training or using Large Language Models (LLMs) or computer vision models, this is where you want to be.
 
-Within those **hardware** partitions, there are something known as **Slurm partitions**. Don't be intimidated by the name, we will cover Slurm in the next chapter. For now, view the hardware partitions 
+Within those **hardware** partitions, there are something known as **Slurm partitions**. They are "subpartitions" of hardware partitions. Don't be intimidated by the name, we will cover Slurm in the next chapter.
+
+**LUMI-C (CPU partitions)**
+| Name | Max walltime | Max jobs | Max resources/job | Purpose |
+| :--- | :--- | :--- | :--- | :--- |
+| standard | 2 days | 120 | 512 nodes | Larger jobs |
+| small | 3 days | 220 | 4 nodes | Small or memory intense jobs |
+| debug | 30 minutes | 2 | 4 nodes | Debugging and testing |
+
+**LUMI-G (GPU partitions)**
+| Name | Max walltime | Max jobs | Max resources/job | Purpose |
+| :--- | :--- | :--- | :--- | :--- |
+| standard-g | 2 days | 210 | 1024 nodes | Larger jobs |
+| small-g | 3 days | 210 | 4 nodes | Small GPU jobs |
+| dev-g | 2 hours | 2 | 8 nodes | Debugging |
 
 [👉 Full list of LUMI Partitions and their specs](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/partitions/)
 
@@ -51,16 +63,16 @@ Within those **hardware** partitions, there are something known as **Slurm parti
 
 On your laptop, everything is usually on one "C: Drive." On LUMI, storage is split into different tiers. Using the wrong one can make your AI training run 10x slower!
 
-| Storage Name | Path Prefix | Purpose | Analogy |
-| :--- | :--- | :--- | :--- |
-| **Home** | `/home/project_...` | Small scripts and settings. | **Your Pocket:** Always with you, but very small. |
-| **Project** | `/project/project_...` | Shared files for your whole team. | **The Filing Cabinet:** Safe and organized for long-term storage. |
-| **Scratch** | `/scratch/project_...` | **Where AI training happens.** | **The Workbench:** Massive and incredibly fast, but temporary. |
+| Storage Name | Path | Intended Use | Limits (Quota / Max Files) | Retention | Billing Rate |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **User home** | `/users/<username>` | User home directory (`$HOME`) for personal and configuration files | 20 GB / 100k | User lifetime | NA |
+| **Project space** | `/project/<project>` | Project home directory for shared project files | 50 GB / 100k | Project lifetime | 1x |
+| **Project scratch** | `/scratch/<project>` | Temporary storage for input, output or checkpoint data | 50 TB / 2000k | Project lifetime* | 1x |
+| **Project flash** | `/flash/<project>` | High performance temporary storage for input and output data | 2 TB / 1000k | Project lifetime* | 3x |
 
-> [!warning]
-> The `/scratch` directory is built for speed. It is where your AI model reads data from while training. However, it is **temporary**. If a file in `/scratch` isn't touched for 90 days, it may be automatically deleted to make room for others. **Always move your final trained models back to `/project`!**
+**\*** - Please remove the files that are no longer needed by your project on a regular basis. If the storage space on LUMI gets too full at some point, automatic cleaning of project scratch and flash might be enabled. In this case information would be sent to LUMI users at least three months in advance. 
 
-[👉 More detailed guide on LUMI Storage](https://docs.lumi-supercomputer.eu/storage/)
+[👉 More info on LUMI Storage](https://docs.lumi-supercomputer.eu/storage/)
 
 ---
 
@@ -69,13 +81,16 @@ On your laptop, everything is usually on one "C: Drive." On LUMI, storage is spl
 As an industry customer, you likely have your own datasets ready to go. To get them onto LUMI:
 
 1.  **Small Files:** Use the "Upload" button in the [LUMI Web Interface](https://www.lumi.csc.fi).
-2.  **Large Datasets:** Use `scp` or `rsync` from your terminal. These tools are designed to handle gigabytes or terabytes of data reliably.
+2.  **Large Datasets:** Use `scp` or `rsync` from your terminal. These tools are designed to handle gigabytes or even terabytes of data reliably.
 
 [👉 How to move your data to LUMI](https://docs.lumi-supercomputer.eu/firststeps/movingdata/)
 
 ---
 
-
+## Summary Checklist
+-
+-
+-
 
 
 
