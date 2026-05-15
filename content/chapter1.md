@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Chapter 1: Welcome"
 nav_order: 1
 ---
 
@@ -11,7 +11,7 @@ The LUMI AI Factory is designed to bridge the gap between supercomputers and the
 Upon completion of this guide, you will: 
 - Understand the basics of working on a supercomputer using the Command Line interface. 
 - Become familiar with Slurm job scheduler and be able to run your own jobs on LUMI.
-- Be prepared to follow a more advanced guide on using LUMI - [LUMI AI Guide](https://github.com/Lumi-supercomputer/LUMI-AI-Guide), which includes running and using LLMs.
+- Be prepared to follow a more advanced guide on using LUMI - [LUMI AI Guide](https://github.com/Lumi-supercomputer/LUMI-AI-Guide), which covers setting up your environment, data storage, running LLMs and much more.
 - Know where to turn for help and where to look for example scripts for your usecase.
 
 ![LUMI](./assets/LUMI_supercomputer.jpg)
@@ -33,16 +33,19 @@ If you’ve used services that provide computational resources for money such as
 Before we dive in, let’s talk about your data. While LUMI is a secure environment, it is a shared supercomputer.
 
 - **The "Shared" Nature:** Your files are protected by standard permissions—users you haven't authorized cannot see your work. However, the hardware itself (the nodes) is shared among many users across Europe.
-- **Sensitive Data:** LUMI lacks the specific legal certifications (like those required for handling raw medical records with patient names or classified government data).
+- **Sensitive Data:** LUMI lacks the specific legal certifications such as those required for handling raw medical records with patient names or classified government data.
 - **The Rule of Thumb:** LUMI is not suitable for "raw" sensitive data containing Personally Identifiable Information (PII) such as names or addresses. However, it is an excellent choice for anonymized or pseudonymized data. If you are working in healthcare or finance, ensure your data is properly stripped of identifying markers before uploading it to LUMI.
 
 ---
 
 ## How to Get Started
-If you haven't already applied for a project or requested compute time, your first stop should be the official application portal:
+If you haven't already applied for a project or requested compute time, your first stop should be establishing whether you're eligible for free resources:
 
-[👉 Apply for LUMI Resources Here](https://lumi-supercomputer.eu/get-started/)
-OR THIS??? https://lumi-ai-factory.eu/pricing-and-eligibility/ and https://lumi-ai-factory.eu/services/super-desk-ai/ 
+[👉 Pricing and eligibility](https://lumi-ai-factory.eu/pricing-and-eligibility/)
+
+Then proceed to applying for resources by filling out this form:
+
+[👉 Get started with us](https://lumi-ai-factory.eu/enter-the-lumi-ai-factory/)
 
 After you've been granted resources:
 

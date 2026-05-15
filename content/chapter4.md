@@ -20,11 +20,12 @@ The login nodes are shared by hundreds of people at once. Login nodes are named 
 
 ### 2. The Compute Nodes (The Factory Floor)
 This is where the magic happens. These are thousands of individual computers equipped with world-class GPUs and CPUs.
-*   **How to get there:** You cannot "log in" to a compute node directly. Instead, you "book" time on them using the Slurm scheduler (which we will cover in Chapter 5). Unlike the Login Node, you don't share CPUs and GPUs 
+*   **How to get there:** You cannot "log in" to a compute node directly. Instead, you "book" time on them using the Slurm scheduler (which we will cover in Chapter 6). Unlike the Login Node, you don't share CPUs and GPUs 
 
 > [!note]
-> You can see your current location from the Command Line Prompt: 
-> ![uan2 prompt](./assets/uan2_command_line_prompt.png). The `@uan2` in the prompt indicates that you are that login node. Compute nodes will have longer names like `nid007628`.
+> You can see your current location from the Command Line: 
+> ![uan2 command line](./assets/uan2_command_line.png) 
+> The `@uan2` in the command line indicates that you are that login node. Compute nodes will have longer names like `nid007628`.
 
 ---
 
@@ -39,7 +40,7 @@ LUMI is divided into two main "partitions" (sections) depending on what kind of 
 *   **LUMI-C (The CPU Workhorse):** These nodes have powerful processors but no GPUs. They are great for data preprocessing, traditional statistics, or "cleaning" your data before the AI training begins.
 *   **LUMI-G (The GPU Powerhouse):** This is the heart of the AI Factory. It contains 11,000 of **AMD MI250X GPUs**. If you are training or using Large Language Models (LLMs) or computer vision models, this is where you want to be.
 
-Within those **hardware** partitions, there are something known as **Slurm partitions**. They are "subpartitions" of hardware partitions. Don't be intimidated by the name, we will cover Slurm in the next chapter.
+Within those **hardware** partitions, there are something known as **Slurm partitions**. They are "subpartitions" of hardware partitions.
 
 **LUMI-C (CPU partitions)**
 | Name | Max walltime | Max jobs | Max resources/job | Purpose |
