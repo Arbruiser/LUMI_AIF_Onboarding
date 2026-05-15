@@ -75,7 +75,8 @@ What you will need to get started:
 
 ---
 
-## Table of contents 
+## Table of contents
+- Chapter 1: Welcome. Introduction to LUMI AI Factory. LUMI vs cloud. How to get resources. 
 - Chapter 2: The Keys to the Castle (Access & Security). What are SSH keys and why we use them instead of just passwords. Links to set up [ssh key pair](https://docs.lumi-supercomputer.eu/firststeps/SSH-keys/), [logging into LUMI](https://docs.lumi-supercomputer.eu/firststeps/loggingin/) with the ssh keys, and [web interface](https://docs.lumi-supercomputer.eu/firststeps/loggingin-webui/) with a web command line. 
 - Chapter 3: The Command Line – Your Primary Tool. What is command line, why we use it. Basic Linux commands with examples, links to external materials. Command cheatsheet. 
 - Chapter 4: Navigating LUMI (Nodes and Storage). Explaination of the physical layout of the supercomputer: login node and compute node. Separate storage: `/home`, `/project`, `/scratch` and how they differ. Link to [moving data to LUMI](https://docs.lumi-supercomputer.eu/firststeps/movingdata/).
