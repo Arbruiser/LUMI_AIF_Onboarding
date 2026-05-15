@@ -5,7 +5,7 @@ nav_order: 3
 
 # Chapter 3: The Command Line – Your Primary Tool
 
-In the previous chapter, you've logged in to LUMI. If you were successful, you can saw LUMI's login wolf, a "Did you know?" fact, and a command line prompt that looked similar to this: 
+In the previous chapter, you've logged in to LUMI. If you were successful, you can saw LUMI's login wolf, a "Did you know?" fact, and a command line that looked similar to this: 
 
 ```bash
 <username>@uan01:~>       
@@ -23,10 +23,10 @@ On LUMI, those folders and files are still there, but you are "navigating by des
 - Efficiency: LUMI is optimized for math and data processing. Displaying a fancy visual desktop for thousands of users would waste massive amounts of power that should be used for your AI models instead.
 - Flexibilty: Graphical interfaces are often just "wrappers" that sit on top of command-line tools. By working directly in the shell, you're removing the middleman. You gain the ability to use every piece of software in the LUMI ecosystem exactly how the developers intended, without being restricted by visual menu options. 
 
-## 📚 Command Line Study materials 
+## 📚 Command Line study materials 
 To learn about the Command Line and the commands to use it, we recommend reading the first 4 chapters of this high-quality [Linux Command Line guide](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview). 
 
-If you are more of a visual learner or if this is your first time learning about the COmmand Line, watch this [video guide](https://www.youtube.com/watch?v=16d2lHc0Pe8).
+If you are more of a visual learner or if this is your first time learning about the Command Line, watch this [video guide](https://www.youtube.com/watch?v=16d2lHc0Pe8).
 
 > [!warning] There is no "Undo"
 > The command line is unforgiving and does not have a "Recycle Bin" or "Revert the previous command" functionality.
@@ -36,13 +36,16 @@ If you are more of a visual learner or if this is your first time learning about
 The best way to learn after having studied some theory is to **practice**. Let's apply what you've learned in the guides in our Command Line terminal on LUMI. You can watch and repeat after this video (???) or follow these step-by-step instructions:
 
 1. **Where am I?**
-    When you log into LUMI using `ssh` as we did in Chapter 2, you end up in your user's `$HOME` directory (this is the current 'working directory'). Check it by running:
+    When you log into LUMI using `ssh` as we did in Chapter 2, you end up in your user's `$HOME` folder (this is the current 'working directory'). Check it by running:
 
     ```bash
     pwd
     ```
 
-    The output should be `/users/username`. This is "where you are" now. 
+    The output (what is ) should be `/users/username`. This is "where you are" now. 
+
+    > [!info]
+    > 'directory' refers to the same thing as 'folder', the difference is only in the context they are usually used in: 'folder' is used in the context of graphical interfaces (such as File Explorer or Finder), and 'directory' is used in the context of the Command Line Interface. 
 
 2. **Create a directory** and name it 'first_dir':
 
@@ -50,7 +53,7 @@ The best way to learn after having studied some theory is to **practice**. Let's
     mkdir first_dir
     ```
 
-    If it was successful, there is no output. Check the result by **l**i**s**ting all the files and directories in the current working directory:
+    If it was successful, `mkdir` has no output. Check the result by **l**i**s**ting all the files and directories in the current working directory:
 
     ```bash
     ls
@@ -116,7 +119,7 @@ The best way to learn after having studied some theory is to **practice**. Let's
     mv <your_image.XXX> renamed_image.XXX
     ```
 
-10. Great job! Now you can disconnect from LUMI by pressing **ctrl+D**. The command prompt has changed, in Linux or MacOS to `your_username_on_your_computer @ the_name_of_your_computer` or `C:\Users\Name` on Windows. This means that you're back to **your machine** in the terminal. 
+10. Great job! Now you can disconnect from LUMI by pressing **ctrl+D**. The command line has changed, in Linux or MacOS to `your_username_on_your_computer @ the_name_of_your_computer` or `C:\Users\Name` on Windows. This means that you're back to **your machine** in the terminal. 
 
 You can learn more about Linux Command Line on the ['Linux basics tutorial for CSC'](https://docs.csc.fi/support/tutorials/env-guide/) page. 
 
@@ -141,3 +144,7 @@ You can learn more about Linux Command Line on the ['Linux basics tutorial for C
 - You know what a Command Line is and why we use it.
 - You have learned the basics of the Command Line.
 - You have practiced learned commands on LUMI.
+
+
+> [!warning]
+> Note to self: Should I explain better the difference between terminal vs command line vs shell or will it be overwhelming and is unnecessary? I can give a link to e.g. [this](https://medium.com/@mrprince123/understanding-the-core-of-computing-terminal-shell-command-prompt-command-line-bash-and-zsh-9b5849ca06b1). 
