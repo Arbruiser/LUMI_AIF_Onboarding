@@ -73,18 +73,6 @@ What you will need to get started:
 - A Terminal: Don’t worry, your computer already has one (Terminal on Mac/Linux, PowerShell or CMD on Windows). We’ll show you how to use it.
 - A LUMI Project with compute resources: You'll get this after your application is approved.
 
----
-
-## Table of contents
-- Chapter 1: Welcome. Introduction to LUMI AI Factory. LUMI vs cloud. How to get resources. 
-- Chapter 2: The Keys to the Castle (Access & Security). What are SSH keys and why we use them instead of just passwords. Links to set up [ssh key pair](https://docs.lumi-supercomputer.eu/firststeps/SSH-keys/), [logging into LUMI](https://docs.lumi-supercomputer.eu/firststeps/loggingin/) with the ssh keys, and [web interface](https://docs.lumi-supercomputer.eu/firststeps/loggingin-webui/) with a web command line. 
-- Chapter 3: The Command Line – Your Primary Tool. What is command line, why we use it. Basic Linux commands with examples, links to external materials. Command cheatsheet. 
-- Chapter 4: Navigating LUMI (Nodes and Storage). Explaination of the physical layout of the supercomputer: login node and compute node. Separate storage: `/home`, `/project`, `/scratch` and how they differ. Link to [moving data to LUMI](https://docs.lumi-supercomputer.eu/firststeps/movingdata/).
-- Chapter 5: AI Software on LUMI (Modules and Containers). What containers are and how they work. Explanation that we can't just install things using `pip install`. Possibly giving links to the [LUMI AI Guide](https://github.com/Lumi-supercomputer/LUMI-AI-Guide) already.
-- Chapter 6: Ordering Compute Power (The Slurm Workload Manager). What Slurm is and why we have it. Slurm scripts and partitions. Links to [LUMI Slurm guide](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/slurm-quickstart/) and simplified explanation of [Slurm partitions](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/partitions/). [Interactive Slurm jobs](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/interactive/). [Billing on LUMI](https://docs.lumi-supercomputer.eu/runjobs/lumi_env/billing/).
-- Chapter 7: Graduation & Next Steps. Links to all sorts of resources and LUMI scripts, useful documentation, contacts to ask for our help, [LUMI AI Guide](https://github.com/Lumi-supercomputer/LUMI-AI-Guide), [LLM scripts](https://docs.csc.fi/support/tutorials/ml-llm/). 
-
-
 
 
 

@@ -5,7 +5,7 @@ nav_order: 2
 
 # Chapter 2: The Keys to the Castle (Access & Security)
 
-Now that you have your LUMI project and account ready, it is time to actually step inside. Unlike logging into a website with a username and password, supercomputers use a much more secure "handshake" method called SSH Keys.
+When you have got your LUMI project, account and computational resoures ("compute") from Chapter 1, it is time to actually step inside. Unlike logging into a website with a username and password, supercomputers use a much more secure "handshake" method called SSH Keys.
 
 If this sounds like secret agent territory, don't worry—it is simply a more robust way to prove who you are without sending a password over the internet where it could be intercepted.
 
@@ -27,10 +27,12 @@ Before you can log in, you need to create this "Key and Lock" pair on your own c
 
 The exact command and steps vary slightly depending on whether you are using Windows, macOS, or Linux:
 
-👉 Follow the [Official Guide to Create Your SSH Keys](https://docs.lumi-supercomputer.eu/firststeps/SSH-keys/)
+[👉 Follow the Official guide to create and upload your SSH keys](https://docs.lumi-supercomputer.eu/firststeps/SSH-keys/)
 
 > [!note]
 > When the guide asks you for a "passphrase," choose something you can remember. This adds a second layer of security: even if someone stole your laptop, they couldn't use your key without that phrase.
+
+Make sure that you have uploaded your public key to the correct portal as described in the guide before you proceed.
 
 ---
 
@@ -51,7 +53,7 @@ The very first time you connect, you will see a message asking if you want to co
 
 **Where is my username?**
 
-Your LUMI username is assigned to you when your account is created. It is usually a short string of characters (e.g., johndoe). You can find your 8-character username on https://www.lumi.csc.fi in the top right corner: "Logged in as `username`".
+Your LUMI username is assigned to you when your account is created. It is usually a short string of characters (e.g., stubbale). You can find your 8-character username on https://www.lumi.csc.fi in the top right corner: "Logged in as `username`".
 
 **The Silent Passphrase**
 
@@ -64,7 +66,7 @@ When you are asked for your passphrase, you won't see any characters appear as y
 
 ### Option B: The Web Interface (Browser-based)
 
-If you are on a restricted work laptop where you cannot configure SSH, or if you just want a more familiar visual environment to start, LUMI offers a web-based portal. This includes a "Web Terminal" that runs directly in your browser.
+If you are on a restricted work laptop where you cannot configure SSH, or if you just want a more familiar visual environment to start, LUMI offers a web-based portal. This includes a "Web Terminal" that runs directly in your browser. It behaves the same as the SSH terminal for all subsequent chapters.
 
 [👉 Accessing LUMI via the Web Interface](https://docs.lumi-supercomputer.eu/firststeps/loggingin-webui/)
 
@@ -77,7 +79,7 @@ If you are on a restricted work laptop where you cannot configure SSH, or if you
 As an industry partner, your code and data are your most valuable assets. To keep them safe:
 - Never share your Private Key. With anyone.
 - Use a Passphrase. It’s the 'password' for your digital key.
-- One Key per Device. If you work from both a desktop and a laptop, it is best practice to generate a unique key pair for each.
+- One Key per Device. If you work from both a desktop and a laptop, generate a new key pair on each device and upload each public key to the portal.
 
 ---
 

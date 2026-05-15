@@ -35,16 +35,54 @@ On LUMI, this "box" is a single file (usually ending in `.sif`).
 > Apptainer was built specifically for supercomputers. It allows you to run the same "boxes" as Docker, but it does so securely without needing administrative privileges ("root").
 
 ## How to get your AI software
-You don't necessarily need to learn how to build these containers from scratch. The LUMI AI Factory provides them for you.
+You don't necessarily need to learn how to build these containers from scratch. The LUMI AI Factory provides them for you. Most of the example scripts and guides already contain code necessary to use a container and you don't need to do anything. 
 
-You can find the list of containers created and maintained by LUMI AI Factory at `/appl/local/laifs/containers/`
+1) If you have the `.sif` file already on the system you can enter the container with an interactive shell. All the commands you execute in the container's shell will be executed using all the dependencies/libraries that are present in the container:
 
-Checking Inside a Container: Once you "enter" a container, you can check what is inside just like you would on your own computer (using pip list), but you are doing so inside that protected, single-file "box."
+    ``` bash
+    singularity shell <container.sif>
+    ``` 
 
-##  What if I am missing a library?
-If you find a container that is almost perfect but is missing one specific library, you can use a Python Virtual Environment (`venv`). You create this environment on top of the container. It stores the extra bits you need in a folder, allowing you to customize your workspace without creating millions of files.
+    Once you "enter" a container, you will see that the Command Line has changed. You can check what is inside just like you would on your own computer:
 
-**Instructions** 
+    ```command
+    pip list
+    ```
+
+2) The second way is to execute a command in the container with singularity exec. E.g., assuming the container has the uname executable installed in it,
+
+    ```bash
+    singularity exec <container.sif> pip list
+    ```
+
+3) The third option is often called running a container, which is done with singularity run:
+
+    ```bash
+    singularity run container.sif
+    ```
+
+    It does require the container to have a built-in "runscript" — a set of default instructions baked in by whoever created the container. 
+    
+    > [!warning[
+    > The LUMI AI Factory containers come with this already set up, so `singularity run` is the recommended way to use them. If you ever get an error saying no runscript is defined, fall back to `singularity exec` instead.
+
+[👉 Read more about containers and interacting with them.](https://lumi-supercomputer.github.io/LUMI-training-materials/2day-20240502/09_Containers/#interacting-with-containers)**(Optional)**
+
+## Using a different container (Advanced)
+However, if the guide or script uses an outdated container, or doesn't use the specific version of a library you need, you can find the full list of containers created and maintained by LUMI AI Factory at `/appl/local/laifs/containers/`. If you don't know which container to choose, use the latest one with the highest number of libraries, conveniently named `lumi-multitorch-latest.sif`.
+
+![List of LAIFs containers](./assets/LAIFS_containers.png)
+
+Besides `lumi-multitorch-latest.sif` you can see directories. The name of the directory contains the date when it was created. `20260415` stands for 2026/04/15. Within each directory you have a number of containers with different contents. `lumi-multitorch-full-...` contains the highest number of libraries and likely includes everything you might want to use. 
+
+[👉 Read about the other types of containers that contain fewer libraries here](https://docs.lumi-supercomputer.eu/laif/software/ai-environment/).
+
+##  What if I am missing a library? (Advanced)
+If you find a container that is almost perfect but is missing one specific library, you can use a Python Virtual Environment (`venv`). You create this environment on top of the container. It stores the extra bits you need in a folder, allowing you to customize your workspace without creating millions of files. If you're sure this is the route you want to take, read this guide:
+
+[👉 Guide on Python Virtual Environment](https://www.w3schools.com/python/python_virtualenv.asp)
+
+[👉 Or watch this video on creating and using `venv` from within a container.](https://lumi-supercomputer.github.io/LUMI-training-materials/ai-20240529/extra_07_VirtualEnvironments/)
 
 
 ## Modules
@@ -56,51 +94,19 @@ module use /appl/local/laifs/modules
 module load lumi-aif-singularity-bindings
 ```
 
-## GitHub: the world’s collaboration platform
-If you’ve ever used Google Docs or a shared Dropbox folder to work on a document with a team, you already understand the spirit of GitHub.
+- `module purge` — Clears any previously loaded modules, giving you a clean slate. This prevents conflicts between incompatible software.
+- `module use` /appl/local/laifs/modules — Tells LUMI where to look for the AI Factory's modules. By default, LUMI only knows about its own system modules; this line adds our collection to the list.
+- `module load` lumi-aif-singularity-bindings — Activates a specific module. In this case, it sets up the necessary "bindings" that allow your container to communicate with LUMI's hardware (GPUs, high-speed network, etc.).
 
-GitHub is the world’s largest platform for hosting and sharing code. A lot of AI research, including the code for working with AI on LUMI, is hosted on GitHub. It isn't just a place to store files; it's a place where developers "track" every single change made to a project, allowing them to collaborate without accidentally overwriting each other's work.
-
-
-### Why do we use it on LUMI?
-The AI community moves incredibly fast. Instead of downloading a "version 1.0" zip file that becomes outdated in a week, we use GitHub to "link" our workspace on LUMI to the latest version of the code.
-
-The good news? Git (the tool used to talk to GitHub) is already installed and configured for everyone on LUMI. You don't need to install anything to start using it.
-
-### Getting the Code: git clone
-When you find an AI project on one of these platforms that you want to use, you "clone" it. Think of cloning simply as downloading the project folder, but with extra Git features attached.
-
-The Command:
-```bash
-git clone https://github.com/username/project-name.git
-```
-
-You can easily get the link for `git clone` if you go to the repository (GitHub folder) of the project, click the button `code` and copy the link in the `HTTPS` window as such:
-
-![Github clone link](./assets/Github_clone_link.png)
-
-A new folder will appear on your LUMI storage (e.g., in your `/scratch `directory) containing all the scripts, configuration files, and instructions from that repository.
-
-### Staying Up to Date: `git pull`
-AI developers frequently update their code (including LUMI guides and examples) to fix bugs or improve performance. If there has been new work published in the repository, it doesn't automatically get reflected in your LUMI folder of the repository. To 'update' the directory and download the new changes, navigate inside your project folder and run:
-
-```bash
-git pull
-```
-
-This command checks GitHub for any new changes and "pulls" them down to your LUMI folder.
-
-### Learn More
-Git is a deep and powerful tool used by professional developers. While clone and pull are enough to get you started as a user, you may eventually want to learn how to save your own changes and contribute back. For that, we recommend going through the official guide for beginners:
-
-👉 Git and GitHub for Beginners (Official Guide)
+> [!note] Do not fret
+> Guides and example scripts will instruct you want modules to use. 
 
 
 ## Checklist
 - You understand that Lustre is great for big files, but struggles with many small files.
 - You understand that pip install can slow down the system for everyone by creating too much "metadata."
 - You understand that Apptainer is the secure, supercomputer-friendly version of Docker that turns thousands of files into one easy-to-manage .sif file.
-- You have become familiarised with GitHub and know how to download code to your machine from there. 
+
 
 
 
@@ -114,7 +120,7 @@ Git is a deep and powerful tool used by professional developers. While clone and
 - Apptainer vs Docker. 
 
 To read a more detailed technical guide on containers:
-[Containers on LUMI-C and LUMI-G](https://lumi-supercomputer.github.io/LUMI-training-materials/2day-20240502/09_Containers/)
+[👉 Containers on LUMI-C and LUMI-G](https://lumi-supercomputer.github.io/LUMI-training-materials/2day-20240502/09_Containers/)
 
 - Where to find containers, who makes them and why they're special. 
 - How to check what's included in a container

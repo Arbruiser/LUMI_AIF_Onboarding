@@ -1,22 +1,41 @@
 ---
-title: "Chapter 7: Graduation & Next Steps"
+title: "Chapter 7: Ordering Compute Power (The Slurm Workload Manager)"
 nav_order: 7
 ---
 
-# Content
-You made it! Congrats!
+**Note to self: chunks of text in double quotes are taken from the CSC ML guide**
 
-* Links to the useful materials that people may be interested in (mostly LLM stuff, but what else?):
-- [LUMI AI Guide](https://github.com/Lumi-supercomputer/LUMI-AI-Guide)
-- [Working with LLMs](https://docs.csc.fi/support/tutorials/ml-llm/)
+## "Create your first batch job script"
 
-## Stay updated
-- Like LUMI User coffee
-- Blogs on [lumi-supercomputer](https://lumi-supercomputer.eu/category/blog-posts/) and [LUMI AI Factory](https://lumi-ai-factory.eu/articles/blog-why-supercomputing-and-lumi/)
-- [Trainings calendar](https://lumi-ai-factory.eu/trainings/)
-- Explore LUMI AIF [Service Catalogue](https://lumi-ai-factory.eu/service-catalogue/)
-- [HPC guides collection](https://github.com/lumi-ai-factory/ai-hpc-guide-collection)
+"Puhti is a supercomputer cluster, which means that it's a collection of hundreds of computers. Instead of running programs directly, they are put in a queue and a scheduling system (called "Slurm") decides when and where the program will run.
+To run a program in Slurm we need to define a batch job script. This is just a text file with a set of Slurm options defining the resources we need for our program and the actual commands needed to run it. You can read more about defining batch job scripts in our [separate documentation page](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/slurm-quickstart/).
 
-## Help
-Contact [LUMI's help desk](https://docs.lumi-supercomputer.eu/helpdesk/)
-? OR [User support](https://lumi-ai-factory.eu/user-support/)
+**an example batch job script should be here**
+
+- **Explanation of what the Slurm script does should be here, both Slurm options and what the script itself does**. Something like "This will run a job in the gputest partition, with 10 CPU cores, 32GB memory and one NVIDIA V100 GPU. The job's maximum run time is 15 minutes. In fact, 15 minutes is the maximum run time that you can request in the gputest partition as it is meant for short testing runs only. Finally, the nvme:10 text in the gres options requests 10GB of the fast local drive (called "NVMe")." 
+
+## "Run your first test job"
+* Instructions for the user to go to their project's /scratch folder. Create a directory there, open nano and save the example script in that directory. Edit the project ID and run the script with `sbatch`
+
+"If submission was successful it should report something like:
+Submitted batch job 12345678"
+
+{: .note }
+> If after submitting a Slurm script (`sbatch xxx.sh`) you're seeing some error message, take a look at our [page of common batch job errors](https://docs.csc.fi/support/faq/why-does-my-batch-job-fail/)
+
+* Check the output of the job / use the LLM or sth
+
+## Step-by-step: submit → monitor → check output — sbatch, squeue, sacct, and where to find the output file.
+
+## Overlapping 
+'jumping' into the shell of the Compute Node of your batch job
+
+## Interactive Slurm jobs ?
+https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/interactive/ 
+
+
+## Billing
+Explain billing units and how they're spent (only for used resources, but all the booked resources)
+
+To check the amount of resources of your project see [Daily Management](https://docs.lumi-supercomputer.eu/runjobs/lumi_env/dailymanagement/)
+

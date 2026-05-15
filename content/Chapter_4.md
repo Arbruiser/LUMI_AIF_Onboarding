@@ -18,9 +18,9 @@ The login nodes are shared by hundreds of people at once. Login nodes are named 
 *   **What to do here:** Organize files, write code in `nano`, check your project balance, and submit your "work orders" (jobs).
 *   **What NOT to do:** Do not run anything computationally heavy, such as AI training or heavy data processing here. If the "Lobby" gets too crowded or someone starts heavy machinery there, it slows down for everyone. LUMI has automatic guards that will stop your processes if they use too much power in the Lobby. For such heavy processes, use ...
 
-### 2. The Compute Nodes (The Factory Floor)
+### 2. The Compute Nodes (The Factory room)
 This is where the magic happens. These are thousands of individual computers equipped with world-class GPUs and CPUs.
-*   **How to get there:** You cannot "log in" to a compute node directly. Instead, you "book" time on them using the Slurm scheduler (which we will cover in Chapter 6). Unlike the Login Node, you don't share CPUs and GPUs 
+*   **How to get there:** You cannot "log in" to a compute node directly. Instead, you "book" time on them using the Slurm scheduler (which we will cover in Chapter 7). Unlike the Login Node, you don't share CPUs and GPUs with other users; the resources you request are exclusively yours for the duration of your job.
 
 > [!note]
 > You can see your current location from the Command Line: 
@@ -43,14 +43,17 @@ LUMI is divided into two main "partitions" (sections) depending on what kind of 
 Within those **hardware** partitions, there are something known as **Slurm partitions**. They are "subpartitions" of hardware partitions.
 
 **LUMI-C (CPU partitions)**
-| Name | Max walltime | Max jobs | Max resources/job | Purpose |
+| Name | Max walltime (duration) | Max jobs | Max resources/job | Purpose |
 | :--- | :--- | :--- | :--- | :--- |
 | standard | 2 days | 120 | 512 nodes | Larger jobs |
 | small | 3 days | 220 | 4 nodes | Small or memory intense jobs |
 | debug | 30 minutes | 2 | 4 nodes | Debugging and testing |
 
+> [!note]
+> **A job** is any task you ask the supercomputer to run — a script that trains a model, processes a dataset, or runs a simulation. You write the instructions, submit them, and LUMI executes them for you.
+
 **LUMI-G (GPU partitions)**
-| Name | Max walltime | Max jobs | Max resources/job | Purpose |
+| Name | Max walltime (duration) | Max jobs | Max resources/job | Purpose |
 | :--- | :--- | :--- | :--- | :--- |
 | standard-g | 2 days | 210 | 1024 nodes | Larger jobs |
 | small-g | 3 days | 210 | 4 nodes | Small GPU jobs |
@@ -71,7 +74,11 @@ On your laptop, everything is usually on one "C: Drive." On LUMI, storage is spl
 | **Project scratch** | `/scratch/<project>` | Temporary storage for input, output or checkpoint data | 50 TB / 2000k | Project lifetime* | 1x |
 | **Project flash** | `/flash/<project>` | High performance temporary storage for input and output data | 2 TB / 1000k | Project lifetime* | 3x |
 
-**\*** - Please remove the files that are no longer needed by your project on a regular basis. If the storage space on LUMI gets too full at some point, automatic cleaning of project scratch and flash might be enabled. In this case information would be sent to LUMI users at least three months in advance. 
+> [!warning].
+> **\*** - Please remove the files that are no longer needed by your project on a regular basis. If the storage space on LUMI gets too full at some point, automatic cleaning of project scratch and flash might be enabled. In this case information would be sent to LUMI users at least three months in advance. 
+
+> [!note]
+> Flash is 3x more expensive per TB because it uses faster NVMe drives. Use it only when your job needs very fast Input and Output (I/O), i.e., the spead of reading from and and writing to the drive.
 
 [👉 More info on LUMI Storage](https://docs.lumi-supercomputer.eu/storage/)
 
@@ -89,14 +96,6 @@ As an industry customer, you likely have your own datasets ready to go. To get t
 ---
 
 ## Summary Checklist
--
--
--
-
-
-
-[LUMI Slurm partitions](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/partitions/)
-
-
-## Data storage on LUMI
-Expalnations from [Storage](https://docs.lumi-supercomputer.eu/storage/)
+- You understand the difference between login nodes and compute nodes.
+- You understand the difference between LUMI-C and LUMI-G.
+- You know which storage tier to use for your data.

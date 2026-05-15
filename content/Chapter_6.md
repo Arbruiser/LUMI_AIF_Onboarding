@@ -1,39 +1,45 @@
 ---
-title: "Chapter 6: Ordering Compute Power (The Slurm Workload Manager)"
+title: "Chapter 6: GitHub, the world’s collaboration platform"
 nav_order: 6
 ---
 
-**Note to self: chunks of text in double quotes are taken from the CSC ML guide**
+If you’ve ever used Google Docs or a shared Dropbox folder to work on a document with a team, you already understand the spirit of GitHub.
 
-## "Create your first batch job script"
-
-"Puhti is a supercomputer cluster, which means that it's a collection of hundreds of computers. Instead of running programs directly, they are put in a queue and a scheduling system (called "Slurm") decides when and where the program will run.
-To run a program in Slurm we need to define a batch job script. This is just a text file with a set of Slurm options defining the resources we need for our program and the actual commands needed to run it. You can read more about defining batch job scripts in our [separate documentation page](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/slurm-quickstart/).
-
-**an example batch job script should be here**
-
-- **Explanation of what the Slurm script does should be here, both Slurm options and what the script itself does**. Something like "This will run a job in the gputest partition, with 10 CPU cores, 32GB memory and one NVIDIA V100 GPU. The job's maximum run time is 15 minutes. In fact, 15 minutes is the maximum run time that you can request in the gputest partition as it is meant for short testing runs only. Finally, the nvme:10 text in the gres options requests 10GB of the fast local drive (called "NVMe")." 
-
-## "Run your first test job"
-* Instructions for the user to go to their project's /scratch folder. Create a directory there, open nano and save the example script in that directory. Edit the project ID and run the script with `sbatch`
-
-"If submission was successful it should report something like:
-Submitted batch job 12345678"
-
-{: .note }
-> If after submitting a Slurm script (`sbatch xxx.sh`) you're seeing some error message, take a look at our [page of common batch job errors](https://docs.csc.fi/support/faq/why-does-my-batch-job-fail/)
-
-* Check the output of the job / use the LLM or sth
-
-## Overlapping 
-'jumping' into the shell of the Compute Node of your batch job
-
-## Interactive Slurm jobs ?
-https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/interactive/ 
+GitHub is the world’s largest platform for hosting and sharing code. A lot of AI research, including the code for working with AI on LUMI, is hosted on GitHub. It isn't just a place to store files; it's a place where developers "track" every single change made to a project, allowing them to collaborate without accidentally overwriting each other's work.
 
 
-## Billing
-Explain billing units and how they're spent (only for used resources, but all the booked resources)
+### Why do we use it on LUMI?
+The AI community moves incredibly fast. Instead of downloading a "version 1.0" zip file that becomes outdated in a week, we use GitHub to "link" our workspace on LUMI to the latest version of the code.
 
-To check the amount of resources of your project see [Daily Management](https://docs.lumi-supercomputer.eu/runjobs/lumi_env/dailymanagement/)
+The good news? Git (the tool used to talk to GitHub) is already installed and configured for everyone on LUMI. You don't need to install anything to start using it.
 
+### Getting the Code: git clone
+When you find an AI project on one of these platforms that you want to use, you "clone" it. Think of cloning simply as downloading the project folder, but with extra Git features attached.
+
+The Command:
+```bash
+git clone https://github.com/username/project-name.git
+```
+
+You can easily get the link for `git clone` if you go to the repository (GitHub folder) of the project, click the button `code` and copy the link in the `HTTPS` window as such:
+
+![Github clone link](./assets/Github_clone_link.png)
+
+A new folder will appear on your LUMI storage (e.g., in your `/scratch `directory) containing all the scripts, configuration files, and instructions from that repository.
+
+### Staying Up to Date: `git pull`
+AI developers frequently update their code (including LUMI guides and examples) to fix bugs or improve performance. If there has been new work published in the repository, it doesn't automatically get reflected in your LUMI folder of the repository. To 'update' the directory and download the new changes, navigate inside your project folder and run:
+
+```bash
+git pull
+```
+
+This command checks GitHub for any new changes and "pulls" them down to your LUMI folder.
+
+### Learn More
+Git is a deep and powerful tool used by professional developers. While clone and pull are enough to get you started as a user, you may eventually want to learn how to save your own changes and contribute back. For that, we recommend going through the official guide for beginners:
+
+[👉 Git and GitHub for Beginners (Official Guide)](https://docs.github.com/en/get-started/start-your-journey/hello-world)
+
+> [!warning] Note to self:
+> Find a better / more suitable guide
