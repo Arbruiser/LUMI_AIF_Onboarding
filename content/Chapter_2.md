@@ -5,11 +5,10 @@ nav_order: 2
 
 # Chapter 2: The Keys to the Castle (Access & Security)
 
-When you have got your LUMI project, account and computational resoures ("compute") from Chapter 1, it is time to actually step inside. Unlike logging into a website with a username and password, supercomputers use a much more secure "handshake" method called SSH Keys.
+When you have got your LUMI project, account and computational resources ("compute") from Chapter 1, it is time to actually step inside. Unlike logging into a website with a username and password, supercomputers use a much more secure "handshake" method called SSH Keys.
 
 If this sounds like secret agent territory, don't worry—it is simply a more robust way to prove who you are without sending a password over the internet where it could be intercepted.
 
----
 
 ## 🔑 What are SSH Keys? (The Lock and the Key)
 
@@ -20,7 +19,6 @@ Think of an SSH key pair like a physical lock and its matching key, but digital:
 > [!note] Why don't we just use passwords?
 > Passwords can be guessed, stolen via "phishing," or intercepted. A cryptographic SSH key is virtually impossible to crack. Because LUMI is a billion-euro piece of infrastructure, we take this security very seriously to protect both the machine and your proprietary company data.
 
----
 
 ## 🛠️ Step 1: Generating Your Keys
 Before you can log in, you need to create this "Key and Lock" pair on your own computer. This process takes about two minutes and usually involves typing one command into your computer's terminal.
@@ -34,7 +32,6 @@ The exact command and steps vary slightly depending on whether you are using Win
 
 Make sure that you have uploaded your public key to the correct portal as described in the guide before you proceed.
 
----
 
 ## 🚪 Step 2: Logging into LUMI
 Once your "Lock" (Public Key) is uploaded to the portal, you are ready to enter the "Lobby" of the supercomputer. We do this by "SSHing" into the system.
@@ -72,7 +69,6 @@ If you are on a restricted work laptop where you cannot configure SSH, or if you
 
 ![Logging into LUMI command line via web interface](./assets/LUMI_logged_in_browser.png)
 
----
 
 ## 🛡️ Staying Secure
 
@@ -81,7 +77,6 @@ As an industry partner, your code and data are your most valuable assets. To kee
 - Use a Passphrase. It’s the 'password' for your digital key.
 - One Key per Device. If you work from both a desktop and a laptop, generate a new key pair on each device and upload each public key to the portal.
 
----
 
 ## Summary Checklist
 - You have generated an SSH key pair on your computer.

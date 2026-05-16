@@ -7,16 +7,14 @@ nav_order: 4
 
 Think of LUMI not as one giant entity, but as a massive *collection* of computers connected by an incredibly fast network.
 
----
 
 ## The "Two-Room" Rule: Login vs. Compute
-
 When you log in via SSH (as we did in Chapter 2), you aren't actually on the "super" part of the supercomputer yet. You are in the **Lobby**.
 
 ### 1. The Login Nodes (The Lobby)
 The login nodes are shared by hundreds of people at once. Login nodes are named `uan01`, `uan02`, etc.
 *   **What to do here:** Organize files, write code in `nano`, check your project balance, and submit your "work orders" (jobs).
-*   **What NOT to do:** Do not run anything computationally heavy, such as AI training or heavy data processing here. If the "Lobby" gets too crowded or someone starts heavy machinery there, it slows down for everyone. LUMI has automatic guards that will stop your processes if they use too much power in the Lobby. For such heavy processes, use ...
+*   **What NOT to do:** Do not run anything computationally heavy, such as AI training or heavy data processing here. If the "Lobby" gets too crowded or someone starts heavy machinery there, it slows down for everyone. LUMI has automatic guards that will stop your processes if they use too much power in the Lobby. For such heavy processes, use the Compute Nodes.
 
 ### 2. The Compute Nodes (The Factory room)
 This is where the magic happens. These are thousands of individual computers equipped with world-class GPUs and CPUs.
@@ -27,13 +25,11 @@ This is where the magic happens. These are thousands of individual computers equ
 > ![uan2 command line](./assets/uan2_command_line.png) 
 > The `@uan2` in the command line indicates that you are that login node. Compute nodes will have longer names like `nid007628`.
 
----
 
 ## 🏎️ Choosing Your Engine: CPU vs. GPU
 
 **What is a CPU?** The CPU (Central Processing Unit) is the general-purpose brain of a computer. It is designed to handle a few complex tasks very quickly, one after another in a sequence.
 **What is a GPU?** The GPU (Graphics Processing Unit) is designed to handle thousands of simple tasks simultaneously. Originally created to calculate the color of millions of pixels on a screen all at once for video games, researchers realized that this ability to do massive simultaneous (parallel) calculations is exactly the kind of math required for Artificial Intelligence. While you technically *can* run AI applications on a CPU, it would be incredibly slow.
-
 
 LUMI is divided into two main "partitions" (sections) depending on what kind of hardware you need:
 
@@ -61,7 +57,6 @@ Within those **hardware** partitions, there are something known as **Slurm parti
 
 [👉 Full list of LUMI Partitions and their specs](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/partitions/)
 
----
 
 ## 📂 Where Does My Data Live? (Storage Tiers)
 
@@ -74,15 +69,14 @@ On your laptop, everything is usually on one "C: Drive." On LUMI, storage is spl
 | **Project scratch** | `/scratch/<project>` | Temporary storage for input, output or checkpoint data | 50 TB / 2000k | Project lifetime* | 1x |
 | **Project flash** | `/flash/<project>` | High performance temporary storage for input and output data | 2 TB / 1000k | Project lifetime* | 3x |
 
-> [!warning].
+> [!warning]
 > **\*** - Please remove the files that are no longer needed by your project on a regular basis. If the storage space on LUMI gets too full at some point, automatic cleaning of project scratch and flash might be enabled. In this case information would be sent to LUMI users at least three months in advance. 
 
 > [!note]
-> Flash is 3x more expensive per TB because it uses faster NVMe drives. Use it only when your job needs very fast Input and Output (I/O), i.e., the spead of reading from and and writing to the drive.
+> Flash is 3x more expensive per TB because it uses faster NVMe drives. Use it only when your job needs very fast Input and Output (I/O), i.e., the speed of reading from and writing to the drive.
 
 [👉 More info on LUMI Storage](https://docs.lumi-supercomputer.eu/storage/)
 
----
 
 ## 🚚 Moving Your Data to LUMI
 
@@ -93,7 +87,6 @@ As an industry customer, you likely have your own datasets ready to go. To get t
 
 [👉 How to move your data to LUMI](https://docs.lumi-supercomputer.eu/firststeps/movingdata/)
 
----
 
 ## Summary Checklist
 - You understand the difference between login nodes and compute nodes.

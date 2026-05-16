@@ -9,8 +9,8 @@ When you download an AI project from the internet, the instructions usually say:
 > [!warning]
 > **On LUMI, you should almost never run `pip install`.**
 
-## Why `pip install` is the "Forbidden Command"
 
+## Why `pip install` is the "Forbidden Command"
 LUMI uses a specialized high-performance storage system called **Lustre**. Lustre is designed for "Big Data" - it is incredibly good at reading and writing massive files (like gigabytes of model weights or terabytes of text) at lightning speeds.
 
 > [!warning]
@@ -19,7 +19,6 @@ LUMI uses a specialized high-performance storage system called **Lustre**. Lustr
 A typical `pip install` of a library like PyTorch creates tens of thousands of tiny files. If everyone ran it, the filesystem would struggle to keep track of millions of tiny files, slowing down the entire supercomputer for everyone.
 
 ## 📦 The Solution: Containers
-
 To avoid the "Million File" problem, we use Containers. On LUMI, our container tool of choice is called 'Apptainer'.
 
 **What is a Container?** 
@@ -33,6 +32,7 @@ On LUMI, this "box" is a single file (usually ending in `.sif`).
 
 > [!info] Why Apptainer instead of Docker?
 > Apptainer was built specifically for supercomputers. It allows you to run the same "boxes" as Docker, but it does so securely without needing administrative privileges ("root").
+
 
 ## How to get your AI software
 You don't necessarily need to learn how to build these containers from scratch. The LUMI AI Factory provides them for you. Most of the example scripts and guides already contain code necessary to use a container and you don't need to do anything. 
@@ -49,7 +49,7 @@ You don't necessarily need to learn how to build these containers from scratch. 
     pip list
     ```
 
-2) The second way is to execute a command in the container with singularity exec. E.g., assuming the container has the uname executable installed in it,
+2) The second way is to execute a command in the container with singularity exec, which enters the container, executes the command and immediately exits the container.
 
     ```bash
     singularity exec <container.sif> pip list
@@ -58,15 +58,16 @@ You don't necessarily need to learn how to build these containers from scratch. 
 3) The third option is often called running a container, which is done with singularity run:
 
     ```bash
-    singularity run container.sif
+    singularity run <container.sif>
     ```
 
     It does require the container to have a built-in "runscript" — a set of default instructions baked in by whoever created the container. 
     
-    > [!warning[
+    > [!warning]
     > The LUMI AI Factory containers come with this already set up, so `singularity run` is the recommended way to use them. If you ever get an error saying no runscript is defined, fall back to `singularity exec` instead.
 
-[👉 Read more about containers and interacting with them.](https://lumi-supercomputer.github.io/LUMI-training-materials/2day-20240502/09_Containers/#interacting-with-containers)**(Optional)**
+[👉 Read more about containers and interacting with them.](https://lumi-supercomputer.github.io/LUMI-training-materials/2day-20240502/09_Containers/#interacting-with-containers) **(Optional)**
+
 
 ## Using a different container (Advanced)
 However, if the guide or script uses an outdated container, or doesn't use the specific version of a library you need, you can find the full list of containers created and maintained by LUMI AI Factory at `/appl/local/laifs/containers/`. If you don't know which container to choose, use the latest one with the highest number of libraries, conveniently named `lumi-multitorch-latest.sif`.
@@ -95,11 +96,11 @@ module load lumi-aif-singularity-bindings
 ```
 
 - `module purge` — Clears any previously loaded modules, giving you a clean slate. This prevents conflicts between incompatible software.
-- `module use` /appl/local/laifs/modules — Tells LUMI where to look for the AI Factory's modules. By default, LUMI only knows about its own system modules; this line adds our collection to the list.
+- `module use /appl/local/laifs/modules` — Tells LUMI where to look for the AI Factory's modules. By default, LUMI only knows about its own system modules; this line adds our collection to the list.
 - `module load` lumi-aif-singularity-bindings — Activates a specific module. In this case, it sets up the necessary "bindings" that allow your container to communicate with LUMI's hardware (GPUs, high-speed network, etc.).
 
 > [!note] Do not fret
-> Guides and example scripts will instruct you want modules to use. 
+> Guides and example scripts will instruct you what modules to use. 
 
 
 ## Checklist

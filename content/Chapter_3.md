@@ -13,8 +13,8 @@ In the previous chapter, you've logged in to LUMI. If you were successful, you s
 
 **Welcome to the Shell.** This is the "Command Line Interface" (CLI). It might feel like you've traveled back in time to the 1980s, but in the world of Supercomputing and AI, this is the most powerful way to work.
 
-##  Navigation without a Mouse
 
+##  Navigation without a Mouse
 When you use Windows or macOS, you see folders and icons. You double-click a folder to see what’s inside.
 On LUMI, those folders and files are still there, but you are "navigating by description" rather than "navigating by sight."
 
@@ -26,6 +26,7 @@ On LUMI, those folders and files are still there, but you are "navigating by des
 > [!info]
 > **Shell** is the program that interprets and executes your typed commands in the Command Line Interface.
 
+
 ## 📚 Command Line study materials 
 To learn about the Command Line and the commands to use it, we recommend reading the first 4 chapters of this high-quality [Linux Command Line guide](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview). 
 
@@ -34,6 +35,7 @@ If you are more of a visual learner or if this is your first time learning about
 > [!warning] There is no "Undo"
 > The command line is unforgiving and does not have a "Recycle Bin" or "Revert the previous command" functionality.
 > If you use the delete command (`rm`), the file is gone instantly and permanently. We must always be careful and double-check our commands before hitting Enter.
+
 
 ## Practice
 The best way to learn after having studied some theory is to **practice**. Log in to LUMI (see Chapter 2) and let's apply what you've learned in the guides in our Command Line terminal on LUMI. You can watch and repeat after this video (???) or follow these step-by-step instructions:
@@ -91,7 +93,7 @@ The best way to learn after having studied some theory is to **practice**. Log i
     *Press **q** to exit the less viewer.*
 
     > [!tip]
-    > Instead of typing the whole name of an existing file (such as in step 5), you can type the first few characters of its name (such as `less fir`) and press TAB, will automatically finish the name. If there are multiple files that start with the same few characters, press TAB twice to see available options. 
+    > Instead of typing the whole name of an existing file (such as in step 5), you can type the first few characters of its name (such as `less fir`) and press TAB, it will automatically finish the name. If there are multiple files that start with the same few characters, press TAB twice to see available options. 
 
 6. **Upload a file.** To upload an image from your machine (PC/laptop) to LUMI, one way is to use the web interface:
     - Open [www.lumi.csc.fi](www.lumi.csc.fi) in your browser (don't close your terminal!), log in and go to `Home directory`. This is your `$HOME` user directory where we were working in the previous steps. There you should see our `first_dir` with `first_file.txt` in it.

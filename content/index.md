@@ -27,7 +27,6 @@ If you’ve used services that provide computational resources for money such as
 
 - **The Trade-off:** With great power comes... a bit of a learning curve. LUMI requires more technical "hands-on" work—specifically using the command line. This guide is here to make sure you have the skills to handle that power with confidence.
 
----
 
 ## 🛡️ A Note on Sensitive Data
 Before we dive in, let’s talk about your data. While LUMI is a secure environment, it is a shared supercomputer.
@@ -36,7 +35,6 @@ Before we dive in, let’s talk about your data. While LUMI is a secure environm
 - **Sensitive Data:** LUMI lacks the specific legal certifications such as those required for handling raw medical records with patient names or classified government data.
 - **The Rule of Thumb:** LUMI is not suitable for "raw" sensitive data containing Personally Identifiable Information (PII) such as names or addresses. However, it is an excellent choice for anonymized or pseudonymized data. If you are working in healthcare or finance, ensure your data is properly stripped of identifying markers before uploading it to LUMI.
 
----
 
 ## How to Get Started
 If you haven't already applied for a project or requested compute time, your first stop should be establishing whether you're eligible for free resources:
@@ -51,7 +49,6 @@ After you've been granted resources:
 
 [👉 Read more about identification](https://docs.lumi-supercomputer.eu/firststeps/accessLUMI/)
 
----
 
 ## About This Guide
 
@@ -62,7 +59,6 @@ In the following chapters, we will:
 2. Teach you the "Survival Skills" for the command line.
 3. Link you to the technical steps in the official documentation once you're ready.
 
----
 
 ## Prerequisites
 No special technical skills necessary!
