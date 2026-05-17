@@ -41,7 +41,7 @@ Here is what a simple AI script may look like:
 #SBATCH --ntasks-per-node=1              # Run one instance ('task') of the script at a time 
 #SBATCH --cpus-per-task=14               # The number of CPU cores, in this case per task
 #SBATCH --gpus-per-node=2                # Requesting 2 AMD GCDs (1 full GPU) on that node
-#SBATCH --mem-per-gpu=60G                # 60GB of RAM per GPU (optimal)
+#SBATCH --mem-per-gpu=60G                # 60GB of RAM per GPU
 #SBATCH --time=02:00:00                  # Asking for 2 hours of compute time
 
 
@@ -61,6 +61,9 @@ export MIOPEN_USER_DB=$MIOPEN_DIR/config
 singularity run /appl/local/laifs/containers/lumi-multitorch-latest.sif run_ai.py
 ```
 
+> [!note] Reminder: GPUs vs. GCDs in Slurm
+> Notice the `--gpus-per-node=2` flag above? Remember from Chapter 4 that Slurm considers each **GCD** (half of a physical MI250X chip) as one GPU. So requesting 2 "GPUs" gives you exactly 1 physical MI250X chip.
+
 ## Handing the Ticket to Slurm
 LUMI AI Guide and examples of AI scripts usually contain this Slurm script and you only need to edit it with your actual `--project=` which will be 'billed' for the job.
 Once you've edited this file (let's call it `run_ai.sh`), you submit it to the queue using the `sbatch` command in your terminal:
@@ -74,9 +77,70 @@ The terminal will respond with something like: `Submitted batch job 1234567`.
 Congratulations, your job is officially in the Slurm queue!
 
 
-## Selecting the Right Lane: Slurm Partitions
-In Chapter 4, we talked about the difference between CPU and GPU hardware. Slurm organizes this hardware into distinct lanes called partitions. Choosing the right partition ensures your job doesn't wait in line forever.
+## Interactive Jobs: Running Code and AI Models in Real-Time
+Writing a script and waiting in a queue can be frustrating if you are just trying a new model or testing if it runs properly. For this, Slurm offers **Interactive Sessions**.
 
+Instead of submitting a Batch Script to run later, you ask Slurm to give you a live connection to a node right now. 
+
+To spin up a quick, 30-minute test environment on a GPU node, you use srun:
+
+```bash
+srun --partition=dev-g --nodes=1 --ntasks-per-node=1 --cpus-per-task=14 --gpus-per-node=2 --mem-per-gpu=60G --time=00:30:00 --account=project_xxxxxxxxx --pty bash
+```
+
+Once Slurm grants you the requested resources, your command prompt will change from the Login Node (such as `uan01`) to the Compute Node `nid002134` where all the code you run will use the GPUs and the rest of the hardware you requested. You can now run commands interactively.
+
+
+> [!warning]
+> When you are finished testing, always type exit to release the node so other users can use it!
+
+[👉 Learn more about Interactive Usage on LUMI](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/interactive/)
+
+
+## 💰 How Billing Works on LUMI
+Compute power on LUMI isn't billed in euros — it's billed in **Billing Units (BUs)**. When your project was granted access to LUMI, it received a specific allocation of BUs. Every job you run spends from that allocation.
+
+BUs come in two currencies: **GPU-hours** (for LUMI-G) and **CPU-hours** (for LUMI-C). Since GPUs are the most valuable resource on LUMI, GPU-hours are significantly more expensive.
+
+- **What you're billed for.** You are billed for the resources that have been allocated to you, not the resources you actually use. If your script reserves 4 GCDs but your code only utilizes 1, you still pay for all 4 for the duration of your job. However, if you request 2 hours of walltime but your job finishes in 1 hour, the allocated resources are released and you are only **billed for the 1 hour**.
+
+> [!warning] Efficient resource usage is your responsibility. 
+> Always match your resource requests to what your workload actually needs. Running a tiny model on many GPUs wastes your project's billing allocation. You're billed for allocated resources regardless of how efficiently you have been utilising them.
+
+- **GPU Billing Rates.**
+In standard-g (full-node allocation): each LUMI-G node contains 4 MI250X GPUs (8 GCDs), so 1 node-hour costs 4 GPU-hours. For example, if you allocate 4 nodes and your job runs for 24 hours:
+
+```text
+4 nodes × 4 GPU-hours/node × 24 hours = 384 GPU-hours
+```
+
+In `small-g` and `dev-g` (per-GCD allocation, not full node): each GCD is billed at 0.5 GPU-hours per hour. However, if you request more than 8 CPU cores or more than 64 GB of memory per GCD, you will be billed per additional slice of 8 cores or 64 GB.
+
+> [!info] Slice logic
+> You're effectively billed per "proportion" of the node you're using. GPU nodes are split into 8 equal parts. 
+
+
+- **How resources are spent:** BUs are calculated based on the hardware you request and how long you occupy it. You're billed for the entirety of the billing units while they are allocated to your job. However, if your Slurm script requested 2h, but the job finished in 1h, the allocated resources are released.
+    >[!warning] Responsibility for efficient hardware utilisation is on you.
+    > If you requested too much resources and are underutilising the hardware (e.g., running a tiny model on multiple GPUs), you are billed for the **allocated** resources regardless of how efficiently you're utilising them. 
+- **The GPU Factor:** billing units are separate for GPU and CPU partitions and are called GPU hours and CPU hours respectively. GPUs are highly valuable and GPU hours are significantly more expensive. To calculate how many GPU hours your script used:
+
+    ```
+    GPU-hours-billed = 4 * runtime-of-job
+    ```
+
+    i.e., one node hours correspond to 4 GPU-hours. If you allocate 4 nodes in the standard-g partition and that your job runs for 24 hours, you will consume
+
+    ```
+    4 * 4 * 24 = 384 GPU-hours
+    ```
+
+    For the small-g and dev-g Slurm partitions, where allocation can be done at the level of Graphics Compute Dies (GCD), you will be billed at a 0.5 rate per GCD allocated. However, if you allocate more than 8 CPU cores or more than 64 GB of memory per GCD, you will be billed per slice of 8 cores or 64 GB of memory.
+
+- **Walltime is a hard limit:** If you ask Slurm for 2 hours (#SBATCH --time=02:00:00), but your job wasn't yet complete and the code or AI model were still running, the job will be strictly terminated at exactly 2 hours. Always give your jobs a little bit of "buffer time" to ensure they complete cleanly!
+
+To find out more about GPU, CPU and storage billing:
+[👉 Read the official Breakdown of LUMI Billing Policies](https://docs.lumi-supercomputer.eu/runjobs/lumi_env/billing/)
 
 
 

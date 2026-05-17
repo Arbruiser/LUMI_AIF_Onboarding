@@ -55,7 +55,31 @@ Within those **hardware** partitions, there are something known as **Slurm parti
 | small-g | 3 days | 210 | 4 nodes | Small GPU jobs |
 | dev-g | 2 hours | 2 | 8 nodes | Debugging |
 
-[👉 Full list of LUMI Partitions and their specs](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/partitions/)
+[👉 Full list of LUMI Partitions](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/partitions/)
+
+### 🖥️ Inside a LUMI-G Compute Node (The Hardware)
+
+When you book a full GPU node on LUMI-G, here is exactly what you get inside that single physical server:
+
+*   **1× 64-core CPU:** An AMD EPYC processor with 512 GB of standard RAM. This acts as the manager, handling data loading and feeding it to the GPUs. However, out of these 64 cores, only 56 are available fo you to use as the rest are reserved for the operating system. 
+*   **4× AMD MI250X GPUs:** The incredibly powerful accelerators where your AI models are actually trained.
+*   **Zero Local Storage:** There are no hard drives inside the compute nodes! They are connected directly to LUMI's massive, high-speed network storage.
+
+#### The "GPU vs. GCD" Confusion (Important!)
+This is one of the most important concepts to understand about LUMI's hardware. 
+
+Each AMD MI250X is physically one large chip, but inside, it is actually split into **two independent halves** called **Graphics Compute Dies (GCDs)**. Each GCD acts as its own separate GPU with its own 64 GB of dedicated video memory (HBM).
+
+Because they operate independently, the software and the Slurm scheduler (covered in Chapter 7) treat every GCD as a completely separate GPU. 
+
+*   1 physical MI250X chip = **2 GCDs**
+*   1 full LUMI-G Node (4 physical chips) = **8 GCDs**
+
+**Why does this matter?** Because when Slurm refers to "GPUs", it actually means "GCDs". If you look at a full LUMI-G node, Slurm will say it has **8 GPUs available**, not 4. When you request resources for your job, remember: **1 Slurm GPU = 1 GCD = half of a physical MI250X.**
+
+[👉 LUMI-G (GPU partition) hardware description](https://docs.lumi-supercomputer.eu/hardware/lumig/)
+
+[👉 LUMI-C (CPU partition) hardware description](https://docs.lumi-supercomputer.eu/hardware/lumic/)
 
 
 ## 📂 Where Does My Data Live? (Storage Tiers)
