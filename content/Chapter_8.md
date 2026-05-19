@@ -25,7 +25,7 @@ Now that you've mastered the basics, here are some excellent resources to contin
 - [👉 HPC Guides Collection](https://github.com/lumi-ai-factory/ai-hpc-guide-collection): A curated repository of various High-Performance Computing and AI guides.
 
 
-## 🌐 Stay Updated
+## Stay Updated
 
 The AI landscape and the LUMI ecosystem evolve rapidly. Keep yourself in the loop:
 
@@ -43,30 +43,3 @@ Even the most experienced developers get stuck. When you do, don't struggle in s
 
 > [!tip] Talk to AI!
 > Don't be afraid to use an AI assistant (like ChatGPT, Claude, or Gemini) alongside your work. While it might not know every LUMI-specific quirk (turn to us for that!), it is exceptionally good at explaining what a complex Slurm script does, debugging Python code, or explaining command-line errors.
-
-
-
-
-
-
-
-## Graduation exercise
-e.g., "Clone the LUMI AI Guide repo, load the container, and submit your first GPU job that runs inference on a small model." This ties all chapters together.
-
-
-* Links to the useful materials that people may be interested in (mostly LLM stuff, but what else?):
-- [LUMI AI Guide](https://github.com/Lumi-supercomputer/LUMI-AI-Guide)
-- [Working with LLMs](https://docs.csc.fi/support/tutorials/ml-llm/)
-
-## Stay updated
-- Like LUMI User coffee
-- Blogs on [lumi-supercomputer](https://lumi-supercomputer.eu/category/blog-posts/) and [LUMI AI Factory](https://lumi-ai-factory.eu/articles/blog-why-supercomputing-and-lumi/)
-- [Trainings calendar](https://lumi-ai-factory.eu/trainings/)
-- Explore LUMI AIF [Service Catalogue](https://lumi-ai-factory.eu/service-catalogue/)
-- [HPC guides collection](https://github.com/lumi-ai-factory/ai-hpc-guide-collection)
-
-## Help
-Contact [LUMI's help desk](https://docs.lumi-supercomputer.eu/helpdesk/)
-? OR [User support](https://lumi-ai-factory.eu/user-support/)
-
-Don't be afraid to talk to AI and ask it questions about how something works and why we do this or that, and why something doesn't work. It might not know LUMI-specific things (turn to us for that!), but it can very accessibly explain you what's happening in a Slurm script or in a Python code.
