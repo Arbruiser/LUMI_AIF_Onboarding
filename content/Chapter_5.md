@@ -10,7 +10,7 @@ When you download an AI project from the internet, the instructions usually say:
 > **On LUMI, you should almost never run `pip install`.**
 
 
-## Why `pip install` is the "Forbidden Command"
+## 🚫 Why `pip install` is the "Forbidden Command"
 LUMI uses a specialized high-performance storage system called **Lustre**. Lustre is designed for "Big Data" - it is incredibly good at reading and writing massive files (like gigabytes of model weights or terabytes of text) at lightning speeds.
 
 > [!warning]
@@ -34,7 +34,7 @@ On LUMI, this "box" is a single file (usually ending in `.sif`).
 > Apptainer was built specifically for supercomputers. It allows you to run the same "boxes" as Docker, but it does so securely without needing administrative privileges ("root").
 
 
-## How to get your AI software
+## 📥 How to get your AI software
 You don't necessarily need to learn how to build these containers from scratch. The LUMI AI Factory provides them for you. Most of the example scripts and guides already contain code necessary to use a container and you don't need to do anything. 
 
 1) If you have the `.sif` file already on the system you can enter the container with an interactive shell. All the commands you execute in the container's shell will be executed using all the dependencies/libraries that are present in the container:
@@ -69,7 +69,7 @@ You don't necessarily need to learn how to build these containers from scratch. 
 [👉 Read more about containers and interacting with them.](https://lumi-supercomputer.github.io/LUMI-training-materials/2day-20240502/09_Containers/#interacting-with-containers) **(Optional)**
 
 
-## Using a different container (Advanced)
+## 🔄 Using a different container (Advanced)
 However, if the guide or script uses an outdated container, or doesn't use the specific version of a library you need, you can find the full list of containers created and maintained by LUMI AI Factory at `/appl/local/laifs/containers/`. If you don't know which container to choose, use the latest one with the highest number of libraries, conveniently named `lumi-multitorch-latest.sif`.
 
 ![List of LAIFs containers](./assets/LAIFS_containers.png)
@@ -78,7 +78,7 @@ Besides `lumi-multitorch-latest.sif` you can see directories. The name of the di
 
 [👉 Read about the other types of containers that contain fewer libraries here](https://docs.lumi-supercomputer.eu/laif/software/ai-environment/).
 
-##  What if I am missing a library? (Advanced)
+## 🧩 What if I am missing a library? (Advanced)
 If you find a container that is almost perfect but is missing one specific library, you can use a Python Virtual Environment (`venv`). You create this environment on top of the container. It stores the extra bits you need in a folder, allowing you to customize your workspace without creating millions of files. If you're sure this is the route you want to take, read this guide:
 
 [👉 Guide on Python Virtual Environment](https://www.w3schools.com/python/python_virtualenv.asp)
@@ -86,7 +86,7 @@ If you find a container that is almost perfect but is missing one specific libra
 [👉 Or watch this video on creating and using `venv` from within a container.](https://lumi-supercomputer.github.io/LUMI-training-materials/ai-20240529/extra_07_VirtualEnvironments/)
 
 
-## Modules
+## 🔌 Modules
 Besides Containers, we use something called 'Modules'. These are software packages already installed by the LUMI staff. You "load" them into your session with a simple command, similar to turning on a light switch:
 
 ```bash
@@ -103,7 +103,7 @@ module load lumi-aif-singularity-bindings
 > Guides and example scripts will instruct you what modules to use. 
 
 
-## Checklist
+## ✅ Summary Checklist
 - You understand that Lustre is great for big files, but struggles with many small files.
 - You understand that pip install can slow down the system for everyone by creating too much "metadata."
 - You understand that Apptainer is the secure, supercomputer-friendly alternative to Docker that turns thousands of files into one easy-to-manage .sif file.

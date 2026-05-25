@@ -20,7 +20,7 @@ Slurm is a **Workload Manager** (often called a **Job Scheduler**). Think of Slu
 The beauty of this system is that you do not need to sit at your computer waiting. Once you hand your ticket to Slurm, you can log out of LUMI, close your laptop, and go have dinner. LUMI will start running your job as soon as enough free resources (GPUs, CPUs, etc.) are available for your job. It will save all the outputs of the script into a text file for you to read later.
 
 
-## The Anatomy of a Slurm Ticket (Batch Script)
+## 📝 The Anatomy of a Slurm Ticket (Batch Script)
 To talk to Slurm, we write a simple text file (ending in `.sh`). This file always starts with a standard script header (`#!/bin/bash`) and contains two main sections right after it:
 1. Special instructions for Slurm: lines starting with `#SBATCH` that tell Slurm exactly what resources your job is asking to book and use.
 2. The actual Command Line commands: the specific instructions to load your environment, set necessary variables, and run e.g., a Python AI script from within a container.
@@ -59,7 +59,7 @@ singularity run /appl/local/laifs/containers/lumi-multitorch-latest.sif python3 
 > Notice the `--gpus-per-node=2` flag above? Remember from Chapter 4 that Slurm considers each **GCD** (half of a physical MI250X chip) as one GPU. So requesting 2 "GPUs" gives you exactly 1 physical MI250X chip.
 
 
-## Handing the Ticket to Slurm
+## 🎫 Handing the Ticket to Slurm
 LUMI AI Guide and examples of AI scripts usually contain this Slurm script and you only need to edit it with your actual `--project=` which will be 'billed' for the job.
 Once you've edited this file (let's call it `run_ai.sh`), you submit it to the queue using the `sbatch` command in your terminal:
 
@@ -68,11 +68,11 @@ sbatch run_ai.sh
 ```
 
 
-## Exercise: run your first AI job on LUMI
+## 🏋️ Exercise: run your first AI job on LUMI
 
 First, let's create the batch script. Navigate to your project's `/scratch` directory and create a new file named `my_first_slurm_script.sh` (you can use `nano` like we did in Chapter 3). Copy and paste the following code, making sure to replace `project_462xxxxxx` with your actual project ID.
 
-```command title="my_first_slurm_script.sh"
+```command
 #!/bin/bash
 #SBATCH --project=project_462xxxxxx      # Identifies your organization's project
 #SBATCH --partition=dev-g                # Choosing the Slurm partition and the hardware partition (-g for GPU)
@@ -180,7 +180,7 @@ less my_first_ai_output.txt
 ```
 
 
-## Interactive Jobs: Running Code and AI Models in Real-Time
+## 💬 Interactive Jobs: Running Code and AI Models in Real-Time
 Writing a script and waiting in a queue can be frustrating if you are just trying a new model or testing if it runs properly. For this, Slurm offers **Interactive Sessions**.
 
 Instead of submitting a Batch Script to run later, you ask Slurm to give you a live connection to a node right now. 
@@ -228,3 +228,9 @@ In `small-g` and `dev-g` (per-GCD allocation, not full node): each GCD is billed
 
 To find out more about GPU, CPU and storage billing:
 [👉 Read the official Breakdown of LUMI Billing Policies](https://docs.lumi-supercomputer.eu/runjobs/lumi_env/billing/)
+
+## ✅ Summary Checklist
+- You understand how Slurm schedules jobs.
+- You can write a basic Slurm batch script.
+- You know how to submit, monitor, and review jobs.
+- You understand how LUMI billing works.

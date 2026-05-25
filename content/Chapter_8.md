@@ -25,7 +25,7 @@ Now that you've mastered the basics, here are some excellent resources to contin
 - [👉 HPC Guides Collection](https://github.com/lumi-ai-factory/ai-hpc-guide-collection): A curated repository of various High-Performance Computing and AI guides.
 
 
-## Stay Updated
+## 🔔 Stay Updated
 
 The AI landscape and the LUMI ecosystem evolve rapidly. Keep yourself in the loop:
 
@@ -43,3 +43,8 @@ Even the most experienced developers get stuck. When you do, don't struggle in s
 
 > [!tip] Talk to AI!
 > Don't be afraid to use an AI assistant (like ChatGPT, Claude, or Gemini) alongside your work. While it might not know every LUMI-specific quirk (turn to us for that!), it is exceptionally good at explaining what a complex Slurm script does, debugging Python code, or explaining command-line errors.
+
+## ✅ Summary Checklist
+- You have completed the LUMI AIF Onboarding.
+- You know where to find advanced guides and help.
+- You are ready for the Graduation Exercise.

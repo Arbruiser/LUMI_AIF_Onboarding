@@ -78,7 +78,7 @@ As an industry partner, your code and data are your most valuable assets. To kee
 - One Key per Device. If you work from both a desktop and a laptop, generate a new key pair on each device and upload each public key to the portal.
 
 
-## Summary Checklist
+## ✅ Summary Checklist
 - You have generated an SSH key pair on your computer.
 - You have uploaded your Public Key to the LUMI user portal.
 - You have successfully logged in and saw the "LUMI" welcome text in your terminal.

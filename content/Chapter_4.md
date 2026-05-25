@@ -8,7 +8,7 @@ nav_order: 4
 Think of LUMI not as one giant entity, but as a massive *collection* of computers connected by an incredibly fast network.
 
 
-## The "Two-Room" Rule: Login vs. Compute
+## 🏢 The "Two-Room" Rule: Login vs. Compute
 When you log in via SSH (as we did in Chapter 2), you aren't actually on the "super" part of the supercomputer yet. You are in the **Lobby**.
 
 ### 1. The Login Nodes (The Lobby)
@@ -115,7 +115,7 @@ As an industry customer, you likely have your own datasets ready to go. To get t
 [👉 How to move your data to LUMI](https://docs.lumi-supercomputer.eu/firststeps/movingdata/)
 
 
-## Summary Checklist
+## ✅ Summary Checklist
 - You understand the difference between login nodes and compute nodes.
 - You understand the difference between LUMI-C and LUMI-G.
 - You know which storage tier to use for your data.

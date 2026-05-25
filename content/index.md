@@ -16,7 +16,7 @@ Upon completion of this guide, you will:
 
 ![LUMI](./assets/LUMI_supercomputer.jpg)
 
-## Why LUMI instead of the "Cloud"?
+## 🐺 Why LUMI instead of the "Cloud"?
 If you’ve used services that provide computational resources for money such as AWS, Google Cloud, or Azure, you might find LUMI a bit different.
 
 - **Computational Power:** LUMI provides access to thousands of powerful AMD processors and GPUs. This massive scale allows you to run complex AI training and heavy simulations that would be cost-prohibitive on standard cloud platforms.
@@ -28,7 +28,7 @@ If you’ve used services that provide computational resources for money such as
 - **The Trade-off:** With great power comes... a bit of a learning curve. LUMI requires more technical "hands-on" work — specifically using the command line. This guide is here to make sure you have the skills to handle that power with confidence.
 
 
-## Help
+## 🆘 Help
 Contact [LUMI AI Factory user support](https://lumi-ai-factory.eu/user-support/)
 
 Don't be afraid to talk to AI and ask it questions about how something works and why we do this or that, and why something doesn't work. It might not know LUMI-specific things (turn to us for that!), but it can very accessibly explain you what's happening in a Slurm script or in a Python code.
@@ -44,7 +44,7 @@ Before we dive in, let’s talk about your data. While LUMI is a secure environm
 - **The Rule of Thumb:** LUMI is not suitable for "raw" sensitive data containing Personally Identifiable Information (PII) such as names or addresses. However, it is an excellent choice for anonymized or pseudonymized data. If you are working in healthcare or finance, ensure your data is properly stripped of identifying markers before uploading it to LUMI.
 
 
-## How to Get Started
+## 🚀 How to Get Started
 If you haven't already applied for a project or requested compute time, your first stop should be establishing whether you're eligible for free resources:
 
 [👉 Pricing and eligibility](https://lumi-ai-factory.eu/pricing-and-eligibility/)
@@ -58,7 +58,7 @@ After you've been granted resources:
 [👉 Read more about identification](https://docs.lumi-supercomputer.eu/firststeps/accessLUMI/)
 
 
-## About This Guide
+## 📖 About This Guide
 
 The official LUMI documentation is excellent, but it can be a bit "sink or swim" for those who aren't used to High-Performance Computing (HPC) and the command line.
 
@@ -68,7 +68,7 @@ In the following chapters, we will:
 3. Link you to the technical steps in the official documentation once you're ready.
 
 
-## Prerequisites
+## 🛠️ Prerequisites
 No special technical skills necessary!
 What you will need to get started:
 
@@ -76,3 +76,8 @@ What you will need to get started:
 - An Internet Connection: No special fiber-optics required!
 - A Terminal: Don’t worry, your computer already has one (Terminal on Mac/Linux, PowerShell or CMD on Windows). We’ll show you how to use it.
 - A LUMI Project with compute resources: You'll get this after your application is approved.
+
+## ✅ Summary Checklist
+- You understand what LUMI AI Factory is and why we use it.
+- You know how to apply for resources.
+- You are ready to start learning.

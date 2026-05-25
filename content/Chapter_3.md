@@ -14,7 +14,7 @@ In the previous chapter, you've logged in to LUMI. If you were successful, you s
 **Welcome to the Shell.** This is the "Command Line Interface" (CLI). It might feel like you've traveled back in time to the 1980s, but in the world of Supercomputing and AI, this is the most powerful way to work.
 
 
-##  Navigation without a Mouse
+## 🖱️ Navigation without a Mouse
 When you use Windows or macOS, you see folders and icons. You double-click a folder to see what’s inside.
 On LUMI, those folders and files are still there, but you are "navigating by description" rather than "navigating by sight."
 
@@ -37,7 +37,7 @@ If you are more of a visual learner or if this is your first time learning about
 > If you use the delete command (`rm`), the file is gone instantly and permanently. We must always be careful and double-check our commands before hitting Enter.
 
 
-## Practice
+## 🏋️ Practice
 The best way to learn after having studied some theory is to **practice**. Log in to LUMI (see Chapter 2) and let's apply what you've learned in the guides in our Command Line terminal on LUMI. Follow these step-by-step instructions:
 
 1. **Where am I?**
@@ -142,7 +142,7 @@ The best way to learn after having studied some theory is to **practice**. Log i
 
 You can learn more about Linux Command Line on the ['Linux basics tutorial for CSC'](https://docs.csc.fi/support/tutorials/env-guide/) page. 
 
-## Your Command Line cheatsheet
+## 📝 Your Command Line cheatsheet
 
 | Command / Key | Action | Quick Note |
 | :--- | :--- | :--- |
@@ -161,7 +161,7 @@ You can learn more about Linux Command Line on the ['Linux basics tutorial for C
 | `Ctrl + X` | Exit | Close the `nano` editor. |
 | `Ctrl + D` | Disconnect | Logout from LUMI and return to your local machine. |
 
-## Summary Checklist
+## ✅ Summary Checklist
 - You know what a Command Line is and why we use it.
 - You have learned the basics of the Command Line.
 - You have practiced learned commands on LUMI.
