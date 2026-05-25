@@ -28,7 +28,7 @@ You can easily get the link for `git clone` if you go to the repository (GitHub 
 
 ![Github clone link](./assets/Github_clone_link.png)
 
-A new folder will appear on your LUMI storage (e.g., in your `/scratch `directory) containing all the scripts, configuration files, and instructions from that repository. Once cloned, don't forget to use `cd repo-name` to step inside your new directory before trying to run any scripts.
+A new folder will appear on your LUMI storage (e.g., in your `/scratch` directory) containing all the scripts, configuration files, and instructions from that repository. Once cloned, don't forget to use `cd repo-name` to step inside your new directory before trying to run any scripts.
 
 
 ## Staying Up to Date: `git pull`

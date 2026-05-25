@@ -5,7 +5,7 @@ nav_order: 2
 
 # Chapter 2: The Keys to the Castle (Access & Security)
 
-When you have got your LUMI project, account and computational resources ("compute") from Chapter 1, it is time to actually step inside. Unlike logging into a website with a username and password, supercomputers use a much more secure "handshake" method called SSH Keys.
+When you have your LUMI project, account and computational resources ("compute") from Chapter 1, it is time to actually step inside. Unlike logging into a website with a username and password, supercomputers use a much more secure "handshake" method called SSH Keys.
 
 If this sounds like secret agent territory, don't worry—it is simply a more robust way to prove who you are without sending a password over the internet where it could be intercepted.
 

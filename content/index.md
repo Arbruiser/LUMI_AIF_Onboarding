@@ -12,7 +12,7 @@ Upon completion of this guide, you will:
 - Understand the basics of working on a supercomputer using the Command Line interface. 
 - Become familiar with Slurm job scheduler and be able to run your own jobs on LUMI.
 - Be prepared to follow a more advanced guide on using LUMI - [LUMI AI Guide](https://github.com/Lumi-supercomputer/LUMI-AI-Guide), which covers setting up your environment, data storage, running LLMs and much more.
-- Know where to turn for help and where to look for example scripts for your usecase.
+- Know where to turn for help and where to look for example scripts for your use case.
 
 ![LUMI](./assets/LUMI_supercomputer.jpg)
 
@@ -23,16 +23,17 @@ If you’ve used services that provide computational resources for money such as
 
 - **Flexibility:** Unlike the "one-size-fits-all" approach of commercial cloud providers, LUMI is highly customizable. You aren't locked into a specific provider's ecosystem; you have the freedom to fine-tune your software environment to meet the exact requirements of your project.
 
-- **Support for Innovation:** For small and medium-sized enterprises (SMEs) and startups, the barriers to entry can be high. We offer learning materials, free compute resources (subj
+- **Support for Innovation:** For small and medium-sized enterprises (SMEs) and startups, the barriers to entry can be high. We offer learning materials, free compute resources (subject to application approval and eligibility), and expert guidance to eligible companies to ensure that European innovation isn't limited by a budget.
+
+- **The Trade-off:** With great power comes... a bit of a learning curve. LUMI requires more technical "hands-on" work — specifically using the command line. This guide is here to make sure you have the skills to handle that power with confidence.
 
 
 ## Help
-Contact [LUMI's help desk](https://docs.lumi-supercomputer.eu/helpdesk/)
-? OR [User support](https://lumi-ai-factory.eu/user-support/)
+Contact [LUMI AI Factory user support](https://lumi-ai-factory.eu/user-support/)
 
-Don't be afraid to talk to AI and ask it questions about how something works and why we do this or that, and why something doesn't work. It might not know LUMI-specific things (turn to us for that!), but it can very accessibly explain you what's happening in a Slurm script or in a Python code.ect to application approval and eligibility), and expert guidance to eligible companies to ensure that European innovation isn't limited by a budget.
+Don't be afraid to talk to AI and ask it questions about how something works and why we do this or that, and why something doesn't work. It might not know LUMI-specific things (turn to us for that!), but it can very accessibly explain you what's happening in a Slurm script or in a Python code.
 
-- **The Trade-off:** With great power comes... a bit of a learning curve. LUMI requires more technical "hands-on" work—specifically using the command line. This guide is here to make sure you have the skills to handle that power with confidence.
+
 
 
 ## 🛡️ A Note on Sensitive Data

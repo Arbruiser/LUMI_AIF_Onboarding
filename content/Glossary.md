@@ -64,6 +64,7 @@ A quick reference for all technical terms used in this guide, listed in the orde
 | **LUMI-G** | The GPU partition of LUMI — nodes equipped with AMD MI250X GPUs for AI workloads. |
 | **Walltime** | The maximum duration a job is allowed to run before it is stopped. |
 | **I/O (Input/Output)** | The speed of reading from and writing to a storage drive. |
+| **GCD (Graphics Compute Die)** | One independent half of an AMD MI250X GPU chip. Each MI250X contains 2 GCDs, each with its own 64 GB of HBM. Slurm treats each GCD as a separate GPU. |
 
 ---
 
@@ -103,3 +104,5 @@ A quick reference for all technical terms used in this guide, listed in the orde
 | **`squeue`** | The command to check the status of your queued or running jobs. |
 | **Interactive Job** | A job where you get a live terminal session on a compute node for real-time work (debugging, testing). |
 | **Billing Unit (BU)** | The unit of currency for LUMI compute time. Different resources (CPU, GPU, storage) cost different amounts of BUs. |
+| **`srun`** | The command to start an interactive job or to launch a task within an allocated job. |
+| **GPU-hours / CPU-hours** | The two currencies of Billing Units on LUMI. GPU-hours are for LUMI-G, CPU-hours are for LUMI-C. |

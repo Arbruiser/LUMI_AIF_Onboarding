@@ -52,7 +52,7 @@ export MIOPEN_USER_DB=$MIOPEN_DIR/config
 
 
 # 3. Run your Python AI script from inside the container
-singularity run /appl/local/laifs/containers/lumi-multitorch-latest.sif run_ai.py
+singularity run /appl/local/laifs/containers/lumi-multitorch-latest.sif python3 run_ai.py
 ```
 
 > [!note] Reminder: GPUs vs. GCDs in Slurm
@@ -193,12 +193,8 @@ srun --partition=dev-g --nodes=1 --ntasks-per-node=1 --cpus-per-task=14 --gpus-p
 
 Once Slurm grants you the requested resources, your command prompt will change from the Login Node (such as `uan01`) to the Compute Node `nid002134` where all the code you run will use the GPUs and the rest of the hardware you requested. You can now run commands interactively.
 
-
 > [!warning]
 > When you are finished testing, always type exit to release the node so other users can use it!
-
-> [!warning]
-> Note to self: need some interactive job exercise here. 
 
 [👉 Learn more about Interactive Usage on LUMI](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/interactive/)
 
@@ -216,7 +212,7 @@ BUs come in two currencies: **GPU-hours** (for LUMI-G) and **CPU-hours** (for LU
 > Always match your resource requests to what your workload actually needs. Running a tiny model on many GPUs wastes your project's billing allocation. You're billed for allocated resources regardless of how efficiently you have been utilising them.
 
 - **GPU Billing Rates.**
-In standard-g (full-node allocation): each LUMI-G node contains 4 MI250X GPUs (8 GCDs), so 1 node-hour costs 4 GPU-hours. For example, if you allocate 4 nodes and your job runs for 24 hours:
+In standard-g (full-node allocation): each LUMI-G node contains 4 MI250X GPUs (8 GCDs), so 1 node-hour costs 4 GPU-hours. GPU-hours are counted based on physical GPUs, 1 GCD = 0.5 GPU. For example, if you allocate 4 nodes and your job runs for 24 hours:
 
 ```text
 4 nodes × 4 GPU-hours/node × 24 hours = 384 GPU-hours

@@ -23,7 +23,7 @@ This is where the magic happens. These are thousands of individual computers equ
 > [!note]
 > You can see your current location from the Command Line: 
 > ![uan2 command line](./assets/uan2_command_line.png) 
-> The `@uan2` in the command line indicates that you are that login node. Compute nodes will have longer names like `nid007628`.
+> The `@uan2` in the command line indicates that you are on that login node. Compute nodes will have longer names like `nid007628`.
 
 
 ## 🏎️ Choosing Your Engine: CPU vs. GPU
@@ -61,8 +61,8 @@ Within those **hardware** partitions, there are something known as **Slurm parti
 
 When you book a full GPU node on LUMI-G, here is exactly what you get inside that single physical server:
 
-*   **1 × 64-core CPU:** An AMD EPYC processor that acts as the manager, handling data loading and feeding it to the GPUs. However, out of these 64 cores, only 56 are available fo you to use as the rest are reserved for the operating system. 
-*   **8 × 64gb DDR4 RAM:** totaling 512GB per node used by the CPU to load datasets, models, run data preprocessing and hold information before sending it to the GPU.  
+*   **1 × 64-core CPU:** An AMD EPYC processor that acts as the manager, handling data loading and feeding it to the GPUs. However, out of these 64 cores, only 56 are available for you to use as the rest are reserved for the operating system. 
+*   **8 × 64GB DDR4 RAM:** totaling 512GB per node used by the CPU to load datasets, models, run data preprocessing and hold information before sending it to the GPU.  
 *   **4 × AMD MI250X GPUs:** The incredibly powerful accelerators where your AI models are actually trained.
 *   **Zero Local Storage:** There are no hard drives inside the compute nodes! They are connected directly to LUMI's massive, high-speed network storage.
 

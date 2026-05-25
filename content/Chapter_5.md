@@ -30,7 +30,7 @@ On LUMI, this "box" is a single file (usually ending in `.sif`).
 - **For Lustre:** Instead of tracking 20,000 tiny files, it only has to track one big container file. This keeps the system fast.
 - **For You:** Your software is "frozen" inside that box. This means it will work exactly the same way every time, regardless of what updates happen to the rest of the supercomputer.
 
-> [!info] Why Apptainer instead of Docker?
+> [!note] Why Apptainer instead of Docker?
 > Apptainer was built specifically for supercomputers. It allows you to run the same "boxes" as Docker, but it does so securely without needing administrative privileges ("root").
 
 
@@ -45,7 +45,7 @@ You don't necessarily need to learn how to build these containers from scratch. 
 
     Once you "enter" a container, you will see that the Command Line has changed. You can check what is inside just like you would on your own computer:
 
-    ```command
+    ```bash
     pip list
     ```
 
@@ -106,4 +106,4 @@ module load lumi-aif-singularity-bindings
 ## Checklist
 - You understand that Lustre is great for big files, but struggles with many small files.
 - You understand that pip install can slow down the system for everyone by creating too much "metadata."
-- You understand that Apptainer is the secure, supercomputer-friendly version of Docker that turns thousands of files into one easy-to-manage .sif file.
+- You understand that Apptainer is the secure, supercomputer-friendly alternative to Docker that turns thousands of files into one easy-to-manage .sif file.

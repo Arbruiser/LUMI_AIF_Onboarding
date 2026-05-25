@@ -21,7 +21,7 @@ On LUMI, those folders and files are still there, but you are "navigating by des
 **Why do we use this for AI?**
 - Automation: You can write a list of commands (a script) that LUMI can follow while you are asleep. You can't "script" a mouse click easily.
 - Efficiency: LUMI is optimized for math and data processing. Displaying a fancy visual desktop for thousands of users would waste massive amounts of power that should be used for your AI models instead.
-- Flexibilty: Graphical interfaces are often just "wrappers" that sit on top of command-line tools. By working directly in the shell, you're removing the middleman. You gain the ability to use every piece of software in the LUMI ecosystem exactly how the developers intended, without being restricted by visual menu options. 
+- Flexibility: Graphical interfaces are often just "wrappers" that sit on top of command-line tools. By working directly in the shell, you're removing the middleman. You gain the ability to use every piece of software in the LUMI ecosystem exactly how the developers intended, without being restricted by visual menu options. 
 
 > [!info]
 > **Shell** is the program that interprets and executes your typed commands in the Command Line Interface.
@@ -96,7 +96,7 @@ The best way to learn after having studied some theory is to **practice**. Log i
     > Instead of typing the whole name of an existing file (such as in step 5), you can type the first few characters of its name (such as `less fir`) and press TAB, it will automatically finish the name. If there are multiple files that start with the same few characters, press TAB twice to see available options. 
 
 6. **Upload a file.** To upload an image from your machine (PC/laptop) to LUMI, one way is to use the web interface:
-    - Open [www.lumi.csc.fi](www.lumi.csc.fi) in your browser (don't close your terminal!), log in and go to `Home directory`. This is your `$HOME` user directory where we were working in the previous steps. There you should see our `first_dir` with `first_file.txt` in it.
+    - Open [www.lumi.csc.fi](https://www.lumi.csc.fi) in your browser (don't close your terminal!), log in and go to `Home directory`. This is your `$HOME` user directory where we were working in the previous steps. There you should see our `first_dir` with `first_file.txt` in it.
     - Click "Upload" and upload your image to your `$HOME` directory. 
 
     > [!tip]
