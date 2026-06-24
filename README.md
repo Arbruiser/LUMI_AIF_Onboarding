@@ -21,6 +21,3 @@ The curriculum is divided into practical, hands-on chapters designed to get user
 
 ## 🌐 Viewing the Guide
 The live, formatted version of this onboarding guide is hosted via GitHub Pages and can be accessed directly from the repository's main URL.
-
-## TODO (note to self):
-- Add quizzes and references to the Glossary with %
