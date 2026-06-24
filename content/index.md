@@ -29,13 +29,15 @@ Before we dive into the supercomputer%, let's clarify an important distinction. 
 So, while all LLMs are AI, not all AI is an LLM! LUMI is built to handle the entire spectrum of AI research, whether you are building the next big language model or training a neural network to discover new medical drugs.
 
 ## 🐺 Why LUMI Instead of the "Cloud"?
-If you’ve used services that provide computational resources for money such as AWS, Google Cloud, or Azure, you might find LUMI a bit different.
+If you’ve used commercial cloud services that provide computational resources for money, you might find LUMI a bit different.
 
-- **Computational Power:** LUMI provides access to thousands of powerful AMD processors% and GPUs%. This massive scale allows you to run complex AI training and heavy simulations that would be cost-prohibitive on standard cloud platforms.
+- **Computational Power:** With LUMI, you don't need to worry about running out of processing power. You don't need a project requiring hundreds or thousands of processors to get started, but when you are ready to scale, LUMI provides access to thousands of powerful AMD CPUs% and GPUs%. This massive capacity allows you to run complex AI training and heavy simulations that would be cost-prohibitive on standard cloud platforms.
 
 - **Flexibility:** Unlike the "one-size-fits-all" approach of commercial cloud providers, LUMI is highly customisable. You aren't locked into a specific provider's ecosystem; you have the freedom to fine-tune your software% environment to meet the exact requirements of your project.
 
 - **Support for Innovation:** Scaling AI can be incredibly resource-intensive for small and medium-sized enterprises (SMEs) and startups. We offer learning materials, free compute resources (subject to application approval and eligibility), and expert guidance to eligible companies to ensure your ideas aren't limited by budget or hardware% constraints.
+
+- **Data Services:** We are also actively developing comprehensive data services to further support your workflows and help you manage your data alongside compute resources.
 
 - **The Trade-off:** With great power comes... a bit of a learning curve. LUMI requires more technical "hands-on" work — specifically using the Command Line%. This guide is here to make sure you have the skills to handle that power with confidence.
 
@@ -43,7 +45,7 @@ If you’ve used services that provide computational resources for money such as
 ## 🆘 Help
 
 **1. Ask an LLM (For Basics)**
-Don't be afraid to talk to your favourite LLM (ChatGPT, Claude, Gemini). For general questions about how High-Performance Computing (HPC) works, navigating the Command Line%, understanding a Slurm script%, or debugging Python code, an LLM is often your fastest and most accessible resource.
+Don't be afraid to talk to your favourite AI chatbot. For general questions about how High-Performance Computing (HPC) works, navigating the Command Line%, understanding a Slurm script%, or debugging Python code, an LLM is often your fastest and most accessible resource.
 
 **2. Contact Us (For LUMI-Specifics & Complex Issues)**
 While LLMs are great for general knowledge, they might not know the specific configurations or policies of LUMI. For LUMI-specific questions, or if you run into more complicated issues that an LLM can't solve, please turn to us! 
