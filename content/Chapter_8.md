@@ -59,15 +59,6 @@ Even the most experienced developers get stuck. When you do, don't struggle in s
 ```quiz
 title: Final Quiz: LUMI Survival Guide
 
-Q: When preparing to process datasets containing personal data on LUMI, which of the following is the correct approach?
-- [ ] You can freely upload any dataset because LUMI is a highly secure supercomputer.
-- [ ] Personal data is strictly forbidden; only fully anonymised data can ever be uploaded.
-- [x] You can process identifiable data if the right contractual agreements (like a Data Processing Agreement) are in place, but highly sensitive data (like health records) requires contacting the LUMI team in advance.
-- [ ] You only need to encrypt the dataset before uploading it, and then all GDPR restrictions are waived.
-> While anonymised data is generally safe, processing identifiable data requires a Data Processing Agreement, and highly sensitive data requires a prior assessment with the LUMI team.
-
----
-
 Q: When typing your SSH passphrase in the terminal during login, what should you expect to see?
 - [ ] Asterisks (***) hiding your password.
 - [ ] A progress bar.
@@ -104,6 +95,15 @@ Q: Which of the following actions should you **avoid** doing on the Login Nodes?
 
 ---
 
+Q: What happens if you try to bypass Slurm and run your heavy AI training script directly on the Command Line of a Login Node?
+- [ ] The script will run normally, just slightly slower.
+- [x] The system's automatic guards will detect the heavy load and kill your process to protect the node for other users.
+- [ ] Slurm will automatically move the script to a Compute Node for you.
+- [ ] You will be permanently banned from LUMI.
+> Login nodes are shared lobbies. Heavy computations are strictly forbidden and will be automatically terminated.
+
+---
+
 Q: If your Slurm batch script requests `--gpus-per-node=4` on the LUMI-G partition, how much physical hardware are you actually reserving?
 - [ ] Four full AMD MI250X chips.
 - [x] Two full AMD MI250X chips.
@@ -132,6 +132,15 @@ Q: LUMI is a shared environment. Which of the following statements about what ot
 
 ---
 
+Q: When preparing to process datasets containing personal data on LUMI, which of the following is the correct approach?
+- [ ] You can freely upload any dataset because LUMI is a highly secure supercomputer.
+- [ ] Personal data is strictly forbidden; only fully anonymised data can ever be uploaded.
+- [x] You can process identifiable data if the right contractual agreements (like a Data Processing Agreement) are in place, but highly sensitive data (like health records) requires contacting the LUMI team in advance.
+- [ ] You only need to encrypt the dataset before uploading it, and then all GDPR restrictions are waived.
+> While anonymised data is generally safe, processing identifiable data requires a Data Processing Agreement, and highly sensitive data requires a prior assessment with the LUMI team.
+
+---
+
 Q: Which tools does the guide recommend for moving data onto LUMI?
 - [x] The "Upload" button in the LUMI Web Interface for small files.
 - [x] `scp` or `rsync` from your terminal for large datasets.
@@ -156,15 +165,6 @@ Q: You found a great open-source AI model on GitHub. What is the recommended way
 - [x] Use `git clone` directly in your LUMI terminal to download the repository.
 - [ ] Copy and paste the code manually into a new `nano` file.
 > `git clone` is the fastest and easiest way to pull code, and it makes updating it later with `git pull` a breeze!
-
----
-
-Q: What happens if you try to bypass Slurm and run your heavy AI training script directly on the Command Line of a Login Node?
-- [ ] The script will run normally, just slightly slower.
-- [x] The system's automatic guards will detect the heavy load and kill your process to protect the node for other users.
-- [ ] Slurm will automatically move the script to a Compute Node for you.
-- [ ] You will be permanently banned from LUMI.
-> Login nodes are shared lobbies. Heavy computations are strictly forbidden and will be automatically terminated.
 
 ---
 

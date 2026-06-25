@@ -7,13 +7,14 @@ This documentation is specifically designed as a practical "survival guide" for 
 The primary goal of these materials is to bridge the gap between commercial AI development and raw supercomputing power. It demystifies complex HPC jargon into plain English and provides step-by-step instructions for running AI workloads on LUMI, one of the most powerful and eco-friendly supercomputers in the world.
 
 ## 🎯 Target Audience
-If your team is familiar with commercial cloud providers (like AWS, Azure, or Google Cloud) or local workstations, but has never used a shared supercomputer, a command-line interface, or a Slurm workload manager, this guide is for you. We assume **no prior HPC experience**.
+If your team is familiar with commercial cloud providers or local workstations, but has never used a shared supercomputer, a command-line interface, or a Slurm workload manager, this guide is for you. We assume **no prior HPC experience**.
 
 ## 📚 What's Inside?
 The curriculum is divided into practical, hands-on chapters designed to get users up and running quickly:
-- **Chapter 1 & 2:** Welcome to the LUMI AI Factory and setting up secure SSH access.
+- **Chapter 1:** Welcome to the LUMI AI Factory.
+- **Chapter 2:** Setting up secure SSH access.
 - **Chapter 3:** Command Line "Survival Skills".
-- **Chapter 4:** Navigating hardware (CPUs vs. GPUs/GCDs) and understanding storage tiers.
+- **Chapter 4:** Navigating hardware (CPUs vs. GPUs/GCDs), understanding storage tiers, and data privacy (GDPR).
 - **Chapter 5:** Using Apptainer/Singularity containers for reproducible AI environments.
 - **Chapter 6:** Managing and transferring code with GitHub.
 - **Chapter 7:** Ordering compute power and running AI jobs using the Slurm Workload Manager.
