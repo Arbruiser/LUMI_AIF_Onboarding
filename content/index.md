@@ -11,12 +11,20 @@ The LUMI AI Factory is designed to bridge the gap between supercomputers and the
 > [!warning] We would love to hear your feedback!
 > These materials are in active development. If you have suggestions, encounter difficulties, or want to share your experience, please fill out our [short feedback form](https://link.webropolsurveys.com/S/574AE9D8B276E808). It only takes a few minutes and helps us improve the guide for everyone.
 
-## 🎯 What to Expect
-Upon completion of this guide, you will: 
-- Understand the basics of working on a supercomputer% using the Command Line% interface. 
-- Become familiar with Slurm% job scheduler and be able to run your own Jobs% on LUMI.
-- Be prepared to follow a more advanced guide on using LUMI - [LUMI AI Guide](https://github.com/Lumi-supercomputer/LUMI-AI-Guide), which covers setting up your environment, data storage, running LLMs% and much more.
-- Know where to turn for help and where to look for example scripts% for your use case.
+## 📖 About This Guide & What to Expect
+
+The official LUMI documentation is excellent, but it can be a bit "sink or swim" for those who aren't used to High-Performance Computing (HPC) and the Command Line. In this guide, we translate complex HPC jargon into plain English and take you on a step-by-step journey from your first login to running your first AI model.
+
+Upon completion of this guide, you will:
+- **Understand Secure Access:** Set up SSH Keys to connect to LUMI safely (Chapter 2).
+- **Master Command Line "Survival Skills":** Navigate the system and manage files without a mouse (Chapter 3).
+- **Navigate Hardware & Storage Tiers:** Understand CPU/GPU Partitions and where your datasets live (Chapter 4).
+- **Manage AI Environments:** Use containers for reproducible software setups (Chapter 5).
+- **Retrieve Ready-to-Use Code:** Download and update pre-written code and examples directly on the supercomputer (Chapter 6).
+- **Order Compute Power:** Schedule resources and run AI Jobs using Slurm (Chapter 7).
+- **Be Prepared to Scale:** Know where to find help, access example scripts, and easily transition to the advanced [LUMI AI Guide](https://github.com/Lumi-supercomputer/LUMI-AI-Guide) (Chapter 8).
+
+At the end of each chapter, you will find **a quiz** to check your understanding before moving on.
 
 ![LUMI](./assets/LUMI_supercomputer.jpg)
 
@@ -73,18 +81,6 @@ Then proceed to applying for resources by filling out this form:
 After you've been granted resources:
 
 [👉 Getting access to LUMI](https://docs.lumi-supercomputer.eu/firststeps/accessLUMI/)
-
-
-## 📖 About This Guide
-
-The official LUMI documentation is excellent, but it can be a bit "sink or swim" for those who aren't used to High-Performance Computing (HPC) and the Command Line.
-
-In this guide, we will translate complex HPC jargon into plain English and take you on a step-by-step journey from your first login to running your first AI model. We'll start by setting up secure SSH access and teaching you essential Command Line "Survival Skills." From there, we will demystify LUMI's hardware and storage tiers, showing you where your data lives and how to securely manage it. You'll learn how to use containers for reproducible AI environments and how to retrieve code using GitHub. Finally, we'll cover how to order compute power and run AI jobs using the Slurm Workload Manager, culminating in a hands-on graduation exercise.
-
-At the end of each chapter, you will find **a quiz** that helps you check your understanding of the material before moving on. 
-
-> [!note] The mechanics of LLM models
-> This onboarding guide focuses on the practical skills needed to operate the supercomputer. To understand the underlying mechanics of the LLMs you will be running—including the technical differences between Dense and MoE architectures, memory bottlenecks, and scaling strategies like Tensor Parallelism—please read our [Technical Primer on Large Language Models](https://arbruiser.github.io/Technical-primer-on-LLMs/).
 
 
 ## 🛠️ Prerequisites

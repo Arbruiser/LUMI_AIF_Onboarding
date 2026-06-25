@@ -34,7 +34,7 @@ On LUMI, this "box" is a single file (usually ending in `.sif`).
 ## 📥 How to Get Your AI Software
 You don't necessarily need to learn how to build these containers from scratch. The LUMI AI Factory provides them for you. Most of the example scripts and guides already contain code necessary to use a container and you don't need to do anything. 
 
-1) If you have the `.sif` file already on the system you can enter the container with an interactive shell. All the commands you execute in the container's shell will be executed using all the dependencies/libraries that are present in the container:
+1) If you have the `.sif` file already on the system you can enter the container with an interactive Shell. All the commands you execute in the container's Shell will be executed using all the dependencies/libraries that are present in the container:
 
     ``` bash
     singularity shell <container.sif>
@@ -58,10 +58,10 @@ You don't necessarily need to learn how to build these containers from scratch. 
     singularity run <container.sif>
     ```
 
-    It does require the container to have a built-in "runscript" — a set of default instructions baked in by whoever created the container. 
+    It does require the container to have a built-in "Runscript" — a set of default instructions baked in by whoever created the container. 
     
     > [!tip] Use singularity run
-    > The LUMI AI Factory containers come with this already set up, so `singularity run` is the recommended way to use them. If you ever get an error saying no runscript is defined, fall back to `singularity exec` instead.
+    > The LUMI AI Factory containers come with this already set up, so `singularity run` is the recommended way to use them. If you ever get an error saying no Runscript is defined, fall back to `singularity exec` instead.
 
 [👉 Read more about containers and interacting with them.](https://lumi-supercomputer.github.io/LUMI-training-materials/2day-20240502/09_Containers/#interacting-with-containers) **(Optional)**
 
@@ -75,12 +75,12 @@ module use /appl/local/laifs/modules
 module load lumi-aif-singularity-bindings
 ```
 
-- `module purge` — Clears any previously loaded modules, giving you a clean slate. This prevents conflicts between incompatible software.
-- `module use /appl/local/laifs/modules` — Tells LUMI where to look for the AI Factory's modules. By default, LUMI only knows about its own system modules; this line adds our collection to the list.
-- `module load lumi-aif-singularity-bindings` — Activates a specific module. In this case, it sets up the necessary "bindings" that allow your container to communicate with LUMI's hardware% (GPUs, high-speed network, etc.).
+- `module purge` — Clears any previously loaded Modules, giving you a clean slate. This prevents conflicts between incompatible software.
+- `module use /appl/local/laifs/modules` — Tells LUMI where to look for the AI Factory's Modules. By default, LUMI only knows about its own system Modules; this line adds our collection to the list.
+- `module load lumi-aif-singularity-bindings` — Activates a specific Module. In this case, it sets up the necessary "Bindings" that allow your container to communicate with LUMI's hardware% (GPUs, high-speed network, etc.).
 
 > [!note] Do not fret
-> Guides and example scripts will instruct you what modules to use. 
+> Guides and example scripts will instruct you what Modules to use. 
 
 
 ## 🔄 Using a Different Container (Advanced)
@@ -114,7 +114,7 @@ Q: Why is running a standard `pip install` directly on the LUMI filesystem gener
 - [ ] Because it requires root privileges, which regular users do not have.
 - [x] Because it creates tens of thousands of tiny files, which severely slows down the Lustre high-performance storage system for everyone.
 - [ ] Because Python libraries are strictly not compatible with AMD GPUs.
-- [ ] Because pip requires an active internet connection, which compute nodes lack.
+- [ ] Because pip requires an active internet connection, which Compute Nodes lack.
 > The Lustre filesystem is built for "Big Data" and reading massive files at lightning speed. However, its main weakness is keeping track of millions of tiny files created by standard `pip install` commands.
 
 ---
@@ -131,9 +131,9 @@ Q: Which of the following best describes Apptainer (previously Singularity)?
 Q: What is the recommended way to use the pre-built LUMI AI Factory containers?
 - [ ] Enter the container with `singularity shell` and manually type out your Python commands.
 - [ ] Use `singularity exec` to execute every single command individually.
-- [x] Use `singularity run`, which executes the default set of instructions (runscript) baked into the container.
+- [x] Use `singularity run`, which executes the default set of instructions (Runscript) baked into the container.
 - [ ] Extract the `.sif` file into your home directory using the `tar` command.
-> The LUMI AI Factory containers come with runscripts already set up by the team, making `singularity run` the most straightforward and recommended way to launch them.
+> The LUMI AI Factory containers come with Runscripts already set up by the team, making `singularity run` the most straightforward and recommended way to launch them.
 
 ---
 
@@ -141,6 +141,6 @@ Q: What is the purpose of "Modules" on LUMI?
 - [ ] They are physical hardware components that you can request from the Slurm scheduler.
 - [x] They are pre-installed software packages provided by the LUMI staff that you can quickly "load" into your session.
 - [ ] They are individual Python scripts that run automatically when you log in.
-- [ ] They are specialised network cables connecting the Login Nodes to the compute nodes.
+- [ ] They are specialised network cables connecting the Login Nodes to the Compute Nodes.
 > Modules act like light switches for software. You can easily activate them with commands like `module load` to instantly get access to complex software pre-installed by the LUMI administrators.
 ```

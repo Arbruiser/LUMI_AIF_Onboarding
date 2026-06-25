@@ -17,12 +17,12 @@ Slurm is a **Workload Manager** (often called a **Job Scheduler**). Think of Slu
 2. Instead, you submit a **booking form** (a **Batch Script**%) to the manager (Slurm). On this form, you specify exactly what equipment you need (e.g., 4 ovens for 2 hours) AND provide the step-by-step recipe (commands) you want executed.
 3. The manager looks at the schedule. As soon as the exact equipment you requested becomes available, they execute your recipe and save the final dish (your output results) for you to pick up later.
 
-The beauty of this system is that you do not need to sit at your computer waiting. Once you hand your ticket to Slurm, you can log out of LUMI, close your laptop, and go have dinner. LUMI will start running your job as soon as enough free resources (GPUs, CPUs, etc.) are available for your job. It will save all the outputs of the script into a text file for you to read later.
+The beauty of this system is that you do not need to sit at your computer waiting. Once you hand your ticket to Slurm, you can log out of LUMI, close your laptop, and go have dinner. LUMI will start running your Job as soon as enough free resources (GPUs, CPUs, etc.) are available for your Job. It will save all the outputs of the script into a text file for you to read later.
 
 
 ## 📝 The Anatomy of a Slurm Ticket (Batch Script)
 To talk to Slurm, we write a simple text file (ending in `.sh`). This file always starts with a standard script header (`#!/bin/bash`) and contains two main sections right after it:
-1. Special instructions for Slurm: lines starting with `#SBATCH` that tell Slurm exactly what resources your job is asking to book and use.
+1. Special instructions for Slurm: lines starting with `#SBATCH` that tell Slurm exactly what resources your Job is asking to book and use.
 2. The actual Command Line% commands: the specific instructions to load your environment, set necessary Environment Variables%, and run e.g., a Python AI script from within a container.
 
 Here is what a simple AI script may look like:
@@ -30,7 +30,7 @@ Here is what a simple AI script may look like:
 ```sh
 #!/bin/bash
 #SBATCH --account=project_462xxxxxx      # Identifies your organisation's project
-#SBATCH --partition=small-g              # Choosing the Slurm partition and the hardware partition (-g for GPU)
+#SBATCH --partition=small-g              # Choosing the Slurm Partition and the hardware Partition (-g for GPU)
 #SBATCH --nodes=1                        # Requesting 1 physical server node
 #SBATCH --ntasks-per-node=1              # Run one instance ('task') of the script at a time 
 #SBATCH --cpus-per-task=14               # The number of CPU cores, in this case per task
@@ -39,13 +39,13 @@ Here is what a simple AI script may look like:
 #SBATCH --time=02:00:00                  # Asking for 2 hours of compute time
 
 
-# 1. Remove any previously loaded modules and load the necessary ones
+# 1. Remove any previously loaded Modules and load the necessary ones
 module purge
 module use /appl/local/laifs/modules
 module load lumi-aif-singularity-bindings
 
 
-# 2. Set necessary environment variables
+# 2. Set necessary Environment Variables
 MIOPEN_DIR=$(mktemp -d)
 export MIOPEN_CUSTOM_CACHE_DIR=$MIOPEN_DIR/cache
 export MIOPEN_USER_DB=$MIOPEN_DIR/config
@@ -60,8 +60,8 @@ srun singularity run /appl/local/laifs/containers/lumi-multitorch-latest.sif pyt
 
 
 ## 🎫 Handing the Ticket to Slurm
-LUMI AI Guide and examples of AI scripts usually contain this Slurm script and you only need to edit it with your actual `project_` which will be 'billed' for the job.
-Once you've edited this file (let's call it `run_ai.sh`), you submit it to the queue using the `sbatch` command in your terminal:
+LUMI AI Guide and examples of AI scripts usually contain this Slurm script and you only need to edit it with your actual `project_` which will be 'billed' for the Job.
+Once you've edited this file (let's call it `run_ai.sh`), you submit it to the queue using the `sbatch` command in your Terminal:
 
 ```bash
 sbatch run_ai.sh
@@ -75,7 +75,7 @@ First, let's create the Batch Script%. Navigate to your project's `/scratch`% di
 ```sh
 #!/bin/bash
 #SBATCH --account=project_462xxxxxx      # Identifies your organisation's project
-#SBATCH --partition=dev-g                # Choosing the Slurm partition and the hardware partition (-g for GPU)
+#SBATCH --partition=dev-g                # Choosing the Slurm Partition and the hardware Partition (-g for GPU)
 #SBATCH --nodes=1                        # Requesting 1 physical server node
 #SBATCH --ntasks-per-node=1              # Run one instance ('task') of the script at a time 
 #SBATCH --cpus-per-task=14               # The number of CPU cores, in this case per task
@@ -84,13 +84,13 @@ First, let's create the Batch Script%. Navigate to your project's `/scratch`% di
 #SBATCH --time=00:30:00                  # Asking for 30 minutes of compute time
 
 
-# 1. Remove any previously loaded modules and load the necessary ones
+# 1. Remove any previously loaded Modules and load the necessary ones
 module purge
 module use /appl/local/laifs/modules
-module load lumi-aif-singularity-bindings # bindings give LUMI containers access to the file system of the working directory
+module load lumi-aif-singularity-bindings # Bindings give LUMI containers access to the file system of the Working Directory
 
 
-# 2. Set necessary environment variables
+# 2. Set necessary Environment Variables
 MIOPEN_DIR=$(mktemp -d)
 export MIOPEN_CUSTOM_CACHE_DIR=$MIOPEN_DIR/cache
 export MIOPEN_USER_DB=$MIOPEN_DIR/config
@@ -124,7 +124,8 @@ def main():
     
     print(f"Loading {model_name}...")
     # Initialise the model (vLLM will automatically distribute it across our 2 requested GCDs)
-    llm = LLM(model=model_name, tensor_parallel_size=2)
+    # We use load_format="runai_streamer" to speed up weight loading using the Run:ai Model Streamer
+    llm = LLM(model=model_name, tensor_parallel_size=2, load_format="runai_streamer")
     
     # Set up our prompt
     prompts = ["What is the LUMI supercomputer?"]
@@ -141,25 +142,26 @@ if __name__ == "__main__":
     main()
 ```
 
+
 ### Step 1: Submit the Job
 Finally, submit the script to the queue using `sbatch`:
 
 ```bash
 sbatch my_first_slurm_script.sh
 ``` 
-The terminal will respond with something like: `Submitted batch job 1234567`. Congratulations, your job is officially in the Slurm queue!
+The Terminal will respond with something like: `Submitted batch job 1234567`. Congratulations, your Job is officially in the Slurm queue!
 
 > [!note] Job submission errors
-> If you see an error message after submitting, check the [troubleshooting guide for common batch job errors](https://docs.csc.fi/support/faq/why-does-my-batch-job-fail/).
+> If you see an error message after submitting, check the [troubleshooting guide for common Batch Job errors](https://docs.csc.fi/support/faq/why-does-my-batch-job-fail/).
 
 
 ### Step 2: Monitor the Queue
-You can check the status of your job using the `squeue` command:
+You can check the status of your Job using the `squeue` command:
 
 ```bash
 squeue --me
 ```
-If your job is running, you will see `R` under the `ST` (State) column. If it is waiting for resources, you will see `PD` (Pending).
+If your Job is running, you will see `R` under the `ST` (State) column. If it is waiting for resources, you will see `PD` (Pending).
 
 
 ### Step 3: Check the Live Output
@@ -169,11 +171,11 @@ To watch the model weights load in real-time, you can "follow" the log file:
 ```bash
 tail -f slurm-<your_job_id>.out
 ```
-*(Press `Ctrl+C` to stop watching the file. This doesn't stop the job!)*
+*(Press `Ctrl+C` to stop watching the file. This doesn't stop the Job!)*
 
 
 ### Step 4: Review the Final Results
-Once the job finishes, it will disappear from `squeue`. If you are watching the live log with `tail -f`, you'll know it's done when the text stops flowing and you see a "Shutdown complete" message. You can then read the complete log file:
+Once the Job finishes, it will disappear from `squeue`. If you are watching the live log with `tail -f`, you'll know it's done when the text stops flowing and you see a "Shutdown complete" message. You can then read the complete log file:
 ```bash
 less slurm-<your_job_id>.out
 ```
@@ -185,7 +187,7 @@ less my_first_ai_output.txt
 
 
 > [!tip] Cancelling a Job
-> Mistakes happen — maybe you spotted a bug in your script right after submitting, or you realised you requested the wrong resources. To cancel a job, use `scancel` with the job ID that `sbatch` gave you:
+> Mistakes happen — maybe you spotted a bug in your script right after submitting, or you realised you requested the wrong resources. To cancel a Job, use `scancel` with the Job ID that `sbatch` gave you:
 >
 > ```bash
 > scancel <your_job_id>
@@ -195,7 +197,7 @@ less my_first_ai_output.txt
 ## 💬 Interactive Jobs: Running Code and AI Models in Real-Time
 Writing a script and waiting in a queue can be frustrating if you are just trying a new model or testing if it runs properly. For this, Slurm also offers **Interactive Jobs**%. 
 
-Instead of submitting a batch script to run later, you ask Slurm to give you a live connection to a node right now.
+Instead of submitting a Batch Script to run later, you ask Slurm to give you a live connection to a node right now.
 
 To spin up a quick, 30-minute test environment on a GPU node, you use `srun`:
 
@@ -216,13 +218,13 @@ When you are finished testing, always type `exit` or press `Ctrl+D` to close you
 
 
 ## 💰 How Billing Works on LUMI
-Compute power on LUMI isn't billed in euros — it's billed in **Billing Units (BUs)**. When your project was granted access to LUMI, it received a specific allocation of BUs. Every job you run spends from that allocation.
+Compute power on LUMI isn't billed in euros — it's billed in **Billing Units (BUs)**. When your project was granted access to LUMI, it received a specific allocation of BUs. Every Job you run spends from that allocation.
 
 BUs come in two currencies: **GPU-hours** (for LUMI-G) and **CPU-hours** (for LUMI-C). Since GPUs are the most valuable resource on LUMI, GPU-hours are significantly more expensive.
 
 [👉 How to check your remaining Billing Units and storage quotas](https://docs.lumi-supercomputer.eu/runjobs/lumi_env/dailymanagement/)
 
-- **What you're billed for.** You are billed for the resources that have been allocated to you, not the part of the resources you've actually used (such as 20% GPU utilisation). If your script reserves 4 GCDs but your code only utilises 1, you still pay for all 4 for the duration of your job. However, if you request 2 hours of walltime but your job finishes in 1 hour, the allocated resources are released and you are only **billed for the 1 hour**.
+- **What you're billed for.** You are billed for the resources that have been allocated to you, not the part of the resources you've actually used (such as 20% GPU utilisation). If your script reserves 4 GCDs but your code only utilises 1, you still pay for all 4 for the duration of your Job. However, if you request 2 hours of walltime but your Job finishes in 1 hour, the allocated resources are released and you are only **billed for the 1 hour**.
 
 > [!warning] Efficient resource usage is your responsibility
 > Always match your resource requests to what your workload actually needs. Running a tiny model on many GPUs wastes your project's billing allocation. You're billed for allocated resources regardless of how efficiently you have been utilising them.
@@ -247,16 +249,16 @@ In `small-g` and `dev-g` (per-GCD allocation, not full node): each GCD is billed
 > **Example:** If you request 1 GCD but ask for **180 GB of RAM** for 1 hour, your RAM request spans across 3 full slices (180 / 60 = 3). You will be billed for **3 slices (1.5 GPU-hours)**, even though you only used 1 GCD!
 
 
-- **Walltime is a hard limit:** If you ask Slurm for 2 hours (`#SBATCH --time=02:00:00`), but your job isn't complete when time runs out, the job will be strictly terminated. Always give your jobs a little bit of "buffer time" to ensure they complete cleanly!
+- **Walltime is a hard limit:** If you ask Slurm for 2 hours (`#SBATCH --time=02:00:00`), but your Job isn't complete when time runs out, the Job will be strictly terminated. Always give your Jobs a little bit of "buffer time" to ensure they complete cleanly!
 
 To find out more about GPU, CPU and storage billing:
 
 [👉 Read the official Breakdown of LUMI Billing Policies](https://docs.lumi-supercomputer.eu/runjobs/lumi_env/billing/)
 
 ## ✅ Summary Checklist
-- You understand how Slurm schedules jobs.
-- You can write a basic Slurm batch script.
-- You know how to submit, monitor, and review jobs.
+- You understand how Slurm schedules Jobs.
+- You can write a basic Slurm Batch Script.
+- You know how to submit, monitor, and review Jobs.
 - You understand how LUMI billing works.
 
 ## 📝 Knowledge Check
@@ -266,24 +268,24 @@ title: Chapter 7 Quiz
 
 Q: What is Slurm?
 - [ ] LUMI's high-speed storage filesystem.
-- [x] The workload manager that schedules and allocates resources for your jobs.
+- [x] The workload manager that schedules and allocates resources for your Jobs.
 - [ ] The software container used to run AI models.
 - [ ] A tool for compiling Python code into GPU instructions.
-> Slurm is the "manager" that takes your batch script, waits for the requested resources to become available, and then executes your commands on the compute nodes.
+> Slurm is the "manager" that takes your Batch Script, waits for the requested resources to become available, and then executes your commands on the Compute Nodes.
 
 ---
 
 Q: Which of the following Slurm commands are correctly matched with their purpose?
-- [x] `sbatch` -> Submits a batch script to the queue.
-- [x] `squeue` -> Checks the status of queued or running jobs.
-- [ ] `srun` -> Cancels a running job.
-- [x] `srun` -> Starts an interactive job for real-time testing.
-- [x] `scancel` -> Cancels a running or pending job.
-> `srun` is used to launch an interactive job (giving you a live terminal on a compute node) or to launch parallel tasks within a batch script. To cancel a job, use `scancel <job_id>`.
+- [x] `sbatch` -> Submits a Batch Script to the queue.
+- [x] `squeue` -> Checks the status of queued or running Jobs.
+- [ ] `srun` -> Cancels a running Job.
+- [x] `srun` -> Starts an Interactive Job for real-time testing.
+- [x] `scancel` -> Cancels a running or pending Job.
+> `srun` is used to launch an Interactive Job (giving you a live Terminal on a Compute Node) or to launch parallel tasks within a Batch Script. To cancel a Job, use `scancel <job_id>`.
 
 ---
 
-Q: In your batch script, you request `--gpus-per-node=2`. What hardware are you actually getting?
+Q: In your Batch Script, you request `--gpus-per-node=2`. What hardware are you actually getting?
 - [ ] Two complete physical MI250X GPU chips.
 - [x] Two GCDs (which equals exactly one physical MI250X GPU chip).
 - [ ] Two full LUMI-G nodes.
@@ -294,8 +296,8 @@ Q: In your batch script, you request `--gpus-per-node=2`. What hardware are you 
 Q: What happens if you request a walltime of 2 hours, but your script needs 2.5 hours to finish?
 - [ ] Slurm automatically extends the time and bills you for the extra half hour.
 - [ ] The script finishes successfully, but you are charged a penalty rate.
-- [x] The job is strictly terminated at the 2-hour mark, potentially losing unsaved progress.
-> Walltime is a hard limit. Always add a buffer to your walltime to ensure your job has time to finish cleanly!
+- [x] The Job is strictly terminated at the 2-hour mark, potentially losing unsaved progress.
+> Walltime is a hard limit. Always add a buffer to your walltime to ensure your Job has time to finish cleanly!
 
 ---
 
@@ -307,8 +309,8 @@ Q: How does billing work if you request 1 GCD but ask for 180 GB of RAM for 1 ho
 
 ---
 
-Q: How do you view the real-time "live" output of a running Slurm job?
-- [ ] By waiting for it to print directly to your terminal screen.
+Q: How do you view the real-time "live" output of a running Slurm Job?
+- [ ] By waiting for it to print directly to your Terminal screen.
 - [ ] By running `cat slurm-<your_job_id>.out`.
 - [x] By using `tail -f slurm-<your_job_id>.out`.
 - [ ] By using the `squeue` command.
@@ -319,7 +321,7 @@ Q: How do you view the real-time "live" output of a running Slurm job?
 Q: You just finished testing your code in an Interactive Job (`srun ... --pty bash`). What is the correct way to release the GPUs so you stop getting billed?
 - [ ] Close your laptop lid.
 - [x] Press `Ctrl+D`.
-- [ ] Do nothing, the job will eventually time out.
+- [ ] Do nothing, the Job will eventually time out.
 - [x] Type `exit`.
 > Closing your laptop or pressing `Ctrl+C` does NOT stop an interactive session! It will keep running in the background and burning your Billing Units until it hits its maximum walltime. You must use `exit` or `Ctrl+D` to terminate the session cleanly.
 
@@ -327,7 +329,7 @@ Q: You just finished testing your code in an Interactive Job (`srun ... --pty ba
 
 Q: If your script requests 4 GCDs but your code only ends up utilising 1 GCD (e.g., 25% GPU utilisation), how are you billed?
 - [ ] You are billed for 1 GCD because Slurm detects the actual usage.
-- [x] You are billed for all 4 GCDs for the duration of the job.
+- [x] You are billed for all 4 GCDs for the duration of the Job.
 - [ ] You are billed for 1 GCD but charged a penalty fee.
 > You are always billed for what you **allocate**, regardless of how efficiently your code actually uses it. It is your responsibility to match your resource requests to your workload!
 ```

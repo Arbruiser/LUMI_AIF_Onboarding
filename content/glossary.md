@@ -30,8 +30,8 @@ A quick reference for all technical terms used in this guide, listed by chapter.
 | **phishing** | A type of cyberattack where attackers deceive people into revealing sensitive information, such as passwords, by pretending to be a trustworthy entity. |
 | **cryptographic** | A secure way of protecting information using mathematical algorithms so that only the right people can access it. |
 | **SSH Key Pair** | A pair of cryptographic keys (one public, one private) used to authenticate your identity when connecting to LUMI. |
-| **Private Key** | The secret half of your SSH key pair. It stays on your computer and should never be shared. |
-| **Public Key** | The shareable half of your SSH key pair. You upload it to the LUMI portal so LUMI can verify your identity. |
+| **Private Key** | The secret half of your SSH Key Pair. It stays on your computer and should never be shared. |
+| **Public Key** | The shareable half of your SSH Key Pair. You upload it to the LUMI portal so LUMI can verify your identity. |
 | **passphrase** | A password that protects your private key, adding a second layer of security. |
 | **string** | A sequence of characters, such as letters, numbers, and symbols, used in computing to represent text. |
 
@@ -57,27 +57,27 @@ A quick reference for all technical terms used in this guide, listed by chapter.
 | Term | Definition |
 |:-----|:-----------|
 | **node** | An individual computer within the LUMI supercomputer. |
-| **Login Node** | A shared "lobby" node where you manage files and submit jobs. Not for heavy computation. Named `uan01`, `uan02`, etc. |
-| **Compute Node** | A powerful node reserved exclusively for running your jobs. Named like `nid007628`. |
+| **Login Node** | A shared "lobby" node where you manage files and submit Jobs. Not for heavy computation. Named `uan01`, `uan02`, etc. |
+| **Compute Node** | A powerful node reserved exclusively for running your Jobs. Named like `nid007628`. |
 | **Job** | Any task you ask the supercomputer to run — a script that trains a model, processes data, or runs a simulation. |
 | **processor** | The "brain" of the computer that carries out instructions and calculations. Often used interchangeably with CPU. |
 | **CPU** | Central Processing Unit. The general-purpose processor of a computer. Handles complex tasks sequentially. |
 | **GPU** | Graphics Processing Unit. A specialised processor that is incredibly fast at doing many simple calculations at the same time. Essential for AI. |
 | **hardware** | The physical components of a computer system, such as processors, memory, and storage drives. |
 | **Partition** | A group of nodes with specific hardware and resource limits (e.g., `small-g`, `dev-g`). |
-| **Slurm Partition** | A subdivision within a hardware partition that sets limits on job size, duration, and number of concurrent jobs (e.g., `standard`, `small-g`, `dev-g`). |
+| **Slurm Partition** | A subdivision within a hardware Partition that sets limits on Job size, duration, and number of concurrent Jobs (e.g., `standard`, `small-g`, `dev-g`). |
 | **`/project`** | Shared project storage (50 GB). Good for files the whole team needs. |
 | **`/scratch`** | High-capacity temporary storage (50 TB). Your main working area for datasets, outputs, and checkpoints. |
 | **`/flash`** | Ultra-fast temporary storage (2 TB). 3x more expensive — use only when your job needs very fast I/O. |
-| **LUMI-C** | The CPU partition of LUMI — nodes with powerful processors but no GPUs. |
-| **LUMI-G** | The GPU partition of LUMI — nodes equipped with AMD MI250X GPUs for AI workloads. |
-| **walltime** | The maximum duration a job is allowed to run before it is stopped. |
+| **LUMI-C** | The CPU Partition of LUMI — nodes with powerful processors but no GPUs. |
+| **LUMI-G** | The GPU Partition of LUMI — nodes equipped with AMD MI250X GPUs for AI workloads. |
+| **walltime** | The maximum duration a Job is allowed to run before it is stopped. |
 | **I/O (Input/Output)** | The speed of reading from and writing to a storage drive. |
 | **GCD** | Graphics Compute Die. One independent half of an AMD MI250X GPU chip. Each MI250X contains 2 GCDs, each with its own 64 GB of VRAM. Slurm treats each GCD as a separate GPU. |
 | **encryption** | A method of protecting data by converting it into a secret format. Only people with the correct password or key can unlock and read it. |
 | **GDPR** | General Data Protection Regulation. A European Union regulation concerning data protection and privacy in the EU and the EEA. |
 | **Data Controller** | Under GDPR, the entity that determines the purposes and means of processing personal data. |
-| **Data Processor** | Under GDPR, the entity that processes personal data on behalf of the data controller. |
+| **Data Processor** | Under GDPR, the entity that processes personal data on behalf of the Data Controller. |
 | **Data Processing Agreement (DPA)** | A legally binding contract between a Data Controller and a Data Processor regulating the secure handling of personal data. |
 
 ---
@@ -92,7 +92,7 @@ A quick reference for all technical terms used in this guide, listed by chapter.
 | **container** | A single `.sif` file that packages all your software, libraries, and dependencies into one "box." |
 | **Apptainer** | The container tool used on LUMI. A secure, supercomputer-friendly alternative to Docker. |
 | **Singularity** | The container tool used on LUMI. A secure, supercomputer-friendly alternative to Docker. |
-| **Bindings** | Configuration that allows a container to communicate with LUMI's hardware (GPUs, high-speed network). Set up by loading the `lumi-aif-singularity-bindings` module. |
+| **Bindings** | Configuration that allows a container to communicate with LUMI's hardware (GPUs, high-speed network). Set up by loading the `lumi-aif-singularity-bindings` Module. |
 | **Runscript** | A set of default instructions baked into a container that define what happens when you `singularity run` it. |
 | **`venv`** | Virtual Environment. A private, self-contained folder where you install Python libraries for a specific project so they do not interfere with other projects on the system. |
 | **Virtual Environment** | A private, self-contained folder where you install Python libraries for a specific project so they do not interfere with other projects on the system. |
@@ -107,8 +107,8 @@ A quick reference for all technical terms used in this guide, listed by chapter.
 | **GitHub** | The world's largest platform for hosting and sharing code. |
 | **Git** | The version-control tool that tracks changes to code. Pre-installed for every user on LUMI. |
 | **Repository** | Aka repo. A project folder on GitHub that contains code, configuration files, and history of all changes. |
-| **`git clone`** | Downloads a repository from GitHub to your LUMI storage. |
-| **`git pull`** | Updates your local copy of a repository with the latest changes from GitHub. |
+| **`git clone`** | Downloads a Repository from GitHub to your LUMI storage. |
+| **`git pull`** | Updates your local copy of a Repository with the latest changes from GitHub. |
 
 ---
 
@@ -116,16 +116,16 @@ A quick reference for all technical terms used in this guide, listed by chapter.
 
 | Term | Definition |
 |:-----|:-----------|
-| **Slurm** | The job scheduler that manages who gets to use which compute nodes and when. |
+| **Slurm** | The job scheduler that manages who gets to use which Compute Nodes and when. |
 | **Batch Script** | A text file containing Slurm options and commands that define what resources you need and what to run. |
-| **`sbatch`** | The command to submit a batch script to Slurm. |
+| **`sbatch`** | The command to submit a Batch Script to Slurm. |
 | **`squeue`** | The command to check the status of your queued or running jobs. |
 | **`scancel`** | The command to cancel a running or pending job. Use `scancel <job_id>` or `scancel --me` to cancel all your jobs. |
-| **Interactive Job** | A job where you get a live terminal session on a compute node for real-time work (debugging, testing). |
+| **Interactive Job** | A Job where you get a live Terminal session on a Compute Node for real-time work (debugging, testing). |
 | **Billing Unit (BU)** | The unit of currency for LUMI compute time. Different resources (CPU, GPU, storage) cost different amounts of BUs. |
-| **`srun`** | The command to start an interactive job or to launch a task within an allocated job. |
-| **GPU-hours** | One of the two currencies of Billing Units on LUMI. Used for compute time on the LUMI-G GPU partition. |
-| **CPU-hours** | One of the two currencies of Billing Units on LUMI. Used for compute time on the LUMI-C CPU partition. |
+| **`srun`** | The command to start an Interactive Job or to launch a task within an allocated Job. |
+| **GPU-hours** | One of the two currencies of Billing Units on LUMI. Used for compute time on the LUMI-G GPU Partition. |
+| **CPU-hours** | One of the two currencies of Billing Units on LUMI. Used for compute time on the LUMI-C CPU Partition. |
 | **Environment Variable** | A background setting you define before running a program, which tells the program how it should behave (such as telling it which AI model to load or where to save files). |
 | **vLLM** | A fast software engine used to run LLMs efficiently. It is the recommended way to use large language models on LUMI. |
 

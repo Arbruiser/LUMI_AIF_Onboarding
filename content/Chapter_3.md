@@ -16,10 +16,10 @@ In the previous chapter, you've logged in to LUMI. If you were successful, you s
 
 ## 🖱️ Navigation Without a Mouse
 When you use Windows or macOS, you see folders and icons. You double-click a folder to see what’s inside.
-On LUMI, those folders (called directories in the command line) and files are still there, but you are "navigating by description" rather than "navigating by sight."
+On LUMI, those folders (called directories in the Command Line) and files are still there, but you are "navigating by description" rather than "navigating by sight."
 
 **Why do we use this for AI?**
-- Flexibility: Graphical interfaces are often just "wrappers" that sit on top of Command Line% tools. By working directly in the shell, you're removing the middleman. You gain the ability to use every piece of software% in the LUMI ecosystem exactly how the developers intended, without being restricted by visual menu options. 
+- Flexibility: Graphical interfaces are often just "wrappers" that sit on top of Command Line% tools. By working directly in the Shell, you're removing the middleman. You gain the ability to use every piece of software% in the LUMI ecosystem exactly how the developers intended, without being restricted by visual menu options. 
 - Automation: You can write a list of commands (a script%) that LUMI can follow while you are asleep. You can't "script" a mouse click easily.
 - Efficiency: LUMI is optimised for math and data processing. Displaying a fancy visual desktop for thousands of users would waste massive amounts of power that should be used for your AI models instead.
 
@@ -34,7 +34,7 @@ If you are more of a visual learner or if this is your first time learning about
 
 
 ## 🏋️ Practice
-The best way to learn after having studied some theory is to **practise**. Log in to LUMI (see Chapter 2) and let's apply what you've learned in the guides in our Command Line terminal on LUMI. Follow these step-by-step instructions:
+The best way to learn after having studied some theory is to **practise**. Log in to LUMI (see Chapter 2) and let's apply what you've learned in the guides in our Command Line Terminal on LUMI. Follow these step-by-step instructions:
 
 > [!tip] Build muscle memory
 > We highly recommend typing the commands out yourself rather than copy-pasting them. Writing them manually helps build muscle memory so you can use them naturally later!
@@ -95,13 +95,13 @@ The best way to learn after having studied some theory is to **practise**. Log i
     > Instead of typing the whole name of an existing file (such as in step 5), you can type the first few characters of its name (such as `less fir`) and press TAB, it will automatically finish the name. If there are multiple files that start with the same few characters, press TAB twice to see available options. 
 
 6. **Upload a file.** To upload an image from your machine (PC/laptop) to LUMI, one way is to use the web interface:
-    - Open [www.lumi.csc.fi](https://www.lumi.csc.fi) in your browser (don't close your terminal!), log in and go to `Home directory`. This is your `$HOME` user directory. There you should see our `first_dir` folder (do **not** click into it so your upload lands in `$HOME`, not inside `first_dir`).
+    - Open [www.lumi.csc.fi](https://www.lumi.csc.fi) in your browser (don't close your Terminal!), log in and go to `Home directory`. This is your `$HOME` user directory. There you should see our `first_dir` folder (do **not** click into it so your upload lands in `$HOME`, not inside `first_dir`).
     - Click "Upload" and upload your image directly to your `$HOME` directory (make sure you do not upload it inside the `first_dir` folder). 
 
     > [!tip] Using `scp`
     > Another, more 'professional' way of uploading files is to use `scp` command as [described here](https://docs.lumi-supercomputer.eu/firststeps/movingdata/).
 
-7. **Go back.** Open your terminal. Go back to the "Parent Directory%" of the current working directory: 
+7. **Go back.** Open your Terminal. Go back to the "Parent Directory%" of the current Working Directory: 
 
     ```bash
     cd ..
@@ -115,7 +115,7 @@ The best way to learn after having studied some theory is to **practise**. Log i
     cp <your_image.png> first_dir
     ```
 
-    Change your working directory to `first_dir` and list the files in it. Hint: look at steps 2 and 3.
+    Change your Working Directory to `first_dir` and list the files in it. Hint: look at steps 2 and 3.
 
 9. **Rename the copied image**. Let's rename it to `renamed_image.png` (using your file's actual extension if it's not `.png`, like `renamed_image.jpg`). We use the `mv` (move) command for this, as renaming is essentially moving a file to the same location under a new name:
 
@@ -123,13 +123,13 @@ The best way to learn after having studied some theory is to **practise**. Log i
     mv <your_image.png> renamed_image.png
     ```
 
-10. **Delete the original image**. Remove the original image that we left in the parent directory:
+10. **Delete the original image**. Remove the original image that we left in the Parent Directory:
 
     ```bash
     rm ../<your_image.png>
     ```
 
-    Make sure that the original image has been removed by navigating to the parent directory and listing the files there.
+    Make sure that the original image has been removed by navigating to the Parent Directory and listing the files there.
 
     > [!warning] Gone for good!
     > After this command, there is no way to recover the removed image as there are no backups on LUMI. Make sure to make a backup of your data to avoid accidents with `rm`. 
@@ -185,16 +185,16 @@ Q: What is the relationship between the Command Line Interface (CLI) and the She
 
 ---
 
-Q: Which command is used to step out of your current directory and move up to the "parent" directory?
+Q: Which command is used to step out of your current directory and move up to the "Parent Directory"?
 - [ ] `cd parent`
 - [x] `cd ..`
 - [ ] `mv ..`
 - [ ] `pwd`
-> The command `cd` stands for Change Directory, and the two dots (`..`) specifically refer to the parent directory located one level above your current location.
+> The command `cd` stands for Change Directory, and the two dots (`..`) specifically refer to the Parent Directory located one level above your current location.
 
 ---
 
-Q: How do you find out "where you are" (your current working directory) in the Command Line?
+Q: How do you find out "where you are" (your current Working Directory) in the Command Line?
 - [ ] Look at the graphical folder icon at the top of the window.
 - [x] Type `pwd` and press Enter.
 - [ ] Type `whereami` and press Enter.
@@ -205,10 +205,10 @@ Q: How do you find out "where you are" (your current working directory) in the C
 
 Q: What are the two primary ways to upload files from your computer to LUMI?
 - [x] Using the LUMI web interface.
-- [ ] Dragging and dropping files into the SSH terminal window.
-- [x] Using the `scp` command from your local terminal.
+- [ ] Dragging and dropping files into the SSH Terminal window.
+- [x] Using the `scp` command from your local Terminal.
 - [ ] Emailing the files to LUMI support.
-> You can upload files visually via the web interface, or use the `scp` command in your terminal for a more robust transfer.
+> You can upload files visually via the web interface, or use the `scp` command in your Terminal for a more robust transfer.
 
 ---
 
