@@ -156,6 +156,7 @@ As an industry customer, you likely have your own datasets ready to go. To get t
 - You understand the difference between LUMI-C and LUMI-G.
 - You know which storage tier to use for your data.
 - You understand how privacy works on shared nodes and directories.
+- You know the rules for processing personal and sensitive data on LUMI.
 
 ## 📝 Knowledge Check
 
@@ -204,4 +205,13 @@ Q: When you run a program on a shared compute node (like `small-g`), what can ot
 - [x] They can see the names of the commands you are running (e.g., `python train.py`), but not the file contents or the program's output.
 - [ ] They can view your screen directly.
 > Just like a task manager on your personal computer, shared nodes allow users to see the names of running processes, but your actual code and data contents remain secure from other users on the node.
+
+---
+
+Q: Under what conditions can you process datasets containing personal data on LUMI?
+- [ ] You can upload any personal data since LUMI is a highly secure environment.
+- [ ] You can only upload fully anonymised data; identifiable data is strictly prohibited.
+- [ ] You can never upload special categories of personal data, such as health records.
+- [x] You can process identifiable data if appropriate security controls and a Data Processing Agreement are in place.
+> While fully anonymised data is generally well-suited, you can process identifiable data with the right contractual agreements. Highly sensitive data requires contacting the LUMI team in advance to assess the use case.
 ```

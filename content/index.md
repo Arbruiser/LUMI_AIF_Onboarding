@@ -79,10 +79,7 @@ After you've been granted resources:
 
 The official LUMI documentation is excellent, but it can be a bit "sink or swim" for those who aren't used to High-Performance Computing (HPC) and the Command Line.
 
-In the following chapters, we will:
-1. Translate the jargon into plain English.
-2. Teach you the "Survival Skills" for the Command Line%.
-3. Link you to the technical steps in the official documentation once you're ready.
+In this guide, we will translate complex HPC jargon into plain English and take you on a step-by-step journey from your first login to running your first AI model. We'll start by setting up secure SSH access and teaching you essential Command Line "Survival Skills." From there, we will demystify LUMI's hardware and storage tiers, showing you where your data lives and how to securely manage it. You'll learn how to use containers for reproducible AI environments and how to retrieve code using GitHub. Finally, we'll cover how to order compute power and run AI jobs using the Slurm Workload Manager, culminating in a hands-on graduation exercise.
 
 At the end of each chapter, you will find **a quiz** that helps you check your understanding of the material before moving on. 
 
@@ -126,13 +123,4 @@ Q: Why might you choose LUMI over a standard commercial cloud provider?
 - [ ] LUMI is simple and intuitive to navigate and use without additional learning materials. 
 - [x] LUMI offers free compute resources and expert guidance to eligible SMEs and startups.
 > LUMI provides massive scale, flexibility, and support for innovation, but the trade-off is a steeper learning curve requiring the Command Line.
-
----
-
-Q: Under what conditions can you process datasets containing personal data on LUMI?
-- [ ] You can upload any personal data since LUMI is a highly secure environment.
-- [ ] You can only upload fully anonymised data; identifiable data is strictly prohibited.
-- [ ] You can never upload special categories of personal data, such as health records.
-- [x] You can process identifiable data if appropriate security controls and a Data Processing Agreement are in place.
-> While fully anonymised data is generally well-suited, you can process identifiable data with the right contractual agreements. Highly sensitive data requires contacting the LUMI team in advance to assess the use case.
 ```
