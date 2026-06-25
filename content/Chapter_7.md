@@ -6,7 +6,7 @@ nav_order: 7
 # Chapter 7: Ordering Compute Power (The Slurm Workload Manager)
 Now you have all the pieces of the puzzle: your data is uploaded (Chapter 4), your software% container is ready and you know how to use it (Chapter 5), and your AI code has been cloned from GitHub (Chapter 6). 
 
-But if you try to run your AI script on the login node right now, the system will stop it. To actually run your code on LUMI's powerful GPUs%, you need to ask the system's supervisor for permission and resources. That supervisor is called **Slurm%**.
+But if you try to run your AI script on the Login Node right now, the system will stop it. To actually run your code on LUMI's powerful GPUs%, you need to ask the system's supervisor for permission and resources. That supervisor is called **Slurm%**.
 
 
 ## 📋 What is Slurm and Why Do We Need It?
@@ -52,7 +52,7 @@ export MIOPEN_USER_DB=$MIOPEN_DIR/config
 
 
 # 3. Run your Python AI script from inside the container
-singularity run /appl/local/laifs/containers/lumi-multitorch-latest.sif python3 run_ai.py
+srun singularity run /appl/local/laifs/containers/lumi-multitorch-latest.sif python3 run_ai.py
 ```
 
 > [!note] Reminder: GPUs vs. GCDs in Slurm
@@ -163,7 +163,7 @@ If your job is running, you will see `R` under the `ST` (State) column. If it is
 
 
 ### Step 3: Check the Live Output
-Unlike your laptop where text prints directly to your screen, Slurm captures everything your Python script "prints" and saves it to a log file in the same directory. This log file will will be named `slurm-<your_job_id>.out` (e.g., `slurm-1234567.out`).
+Unlike your laptop where text prints directly to your screen, Slurm captures everything your Python script "prints" and saves it to a log file in the same directory. This log file will be named `slurm-<your_job_id>.out` (e.g., `slurm-1234567.out`).
 
 To watch the model weights load in real-time, you can "follow" the log file:
 ```bash
@@ -200,7 +200,7 @@ Instead of submitting a batch script to run later, you ask Slurm to give you a l
 To spin up a quick, 30-minute test environment on a GPU node, you use `srun`:
 
 ```bash
-srun --partition=dev-g --nodes=1 --ntasks-per-node=1 --cpus-per-task=14 --gpus-per-node=2 --mem-per-gpu=60G --time=00:30:00 --account=project_xxxxxxxxx --pty bash
+srun --partition=dev-g --nodes=1 --ntasks-per-node=1 --cpus-per-task=14 --gpus-per-node=2 --mem-per-gpu=60G --time=00:30:00 --account=project_462xxxxxx --pty bash
 ```
 Once Slurm grants you the requested resources, your Command Line prompt will change from the Login Node (such as `uan01`) to the Compute Node `nid002134` where all the code you run will use the GPUs and the rest of the hardware% you requested. You can now run commands interactively.
 
@@ -222,7 +222,7 @@ BUs come in two currencies: **GPU-hours** (for LUMI-G) and **CPU-hours** (for LU
 
 [👉 How to check your remaining Billing Units and storage quotas](https://docs.lumi-supercomputer.eu/runjobs/lumi_env/dailymanagement/)
 
-- **What you're billed for.** You are billed for the resources that have been allocated to you, not the part of the resources you've actually used (such as 20% GPU utilisation). If your script reserves 4 GCDs but your code only utilizes 1, you still pay for all 4 for the duration of your job. However, if you request 2 hours of walltime but your job finishes in 1 hour, the allocated resources are released and you are only **billed for the 1 hour**.
+- **What you're billed for.** You are billed for the resources that have been allocated to you, not the part of the resources you've actually used (such as 20% GPU utilisation). If your script reserves 4 GCDs but your code only utilises 1, you still pay for all 4 for the duration of your job. However, if you request 2 hours of walltime but your job finishes in 1 hour, the allocated resources are released and you are only **billed for the 1 hour**.
 
 > [!warning] Efficient resource usage is your responsibility
 > Always match your resource requests to what your workload actually needs. Running a tiny model on many GPUs wastes your project's billing allocation. You're billed for allocated resources regardless of how efficiently you have been utilising them.
@@ -259,11 +259,7 @@ To find out more about GPU, CPU and storage billing:
 - You know how to submit, monitor, and review jobs.
 - You understand how LUMI billing works.
 
----
-
 ## 📝 Knowledge Check
-
-Answer all questions correctly to get celebratory confetti! 🎉
 
 ```quiz
 title: Chapter 7 Quiz

@@ -45,7 +45,7 @@ If you’ve used commercial cloud services that provide computational resources 
 ## 🆘 Help
 
 **1. Ask an LLM (For Basics)**
-Don't be afraid to talk to your favourite AI chatbot. For general questions about how High-Performance Computing (HPC) works, navigating the Command Line%, understanding a Slurm script%, or debugging Python code, an LLM is often your fastest and most accessible resource.
+Don't be afraid to talk to your favourite AI chatbot. For general questions about how High-Performance Computing% (HPC) works, navigating the Command Line%, understanding a Slurm script%, or debugging Python code, an LLM is often your fastest and most accessible resource.
 
 **2. Contact Us (For LUMI-Specifics & Complex Issues)**
 While LLMs are great for general knowledge, they might not know the specific configurations or policies of LUMI. For LUMI-specific questions, or if you run into more complicated issues that an LLM can't solve, please turn to us! 
@@ -58,7 +58,7 @@ Before we dive in, let’s talk about your data. While LUMI is a highly secure e
 
 If your project involves processing **personal, identifiable, or highly sensitive data** (like health records), strict GDPR rules and specific contractual agreements apply. You must assess your use case and establish the necessary safeguards *before* uploading any sensitive datasets.
 
-We will cover the specific rules and classifications for sensitive data in detail in [Chapter 4](Chapter_4#️-gdpr-and-sensitive-data-categories).
+We will cover the specific rules and classifications for sensitive data in detail in Chapter 4.
 
 
 ## 🚀 How to Get Started

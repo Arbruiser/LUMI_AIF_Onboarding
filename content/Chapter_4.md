@@ -15,7 +15,7 @@ Think of LUMI not as one giant entity, but as a massive *collection* of computer
 When you log in via SSH (as we did in Chapter 2), you aren't actually on the "super" part of the supercomputer yet. You are in the **Lobby**.
 
 ### 1. The Login Nodes (The Lobby)
-The login nodes are shared by hundreds of people at once. Login nodes are named `uan01`, `uan02`, etc.
+The Login Nodes are shared by hundreds of people at once. Login Nodes are named `uan01`, `uan02`, etc.
 *   **What to do here:** Organise files, write code in `nano`, check your project balance, and submit your "work orders" (jobs).
 *   **What NOT to do:** Do not run anything computationally heavy, such as AI training or heavy data processing here. If the "Lobby" gets too crowded or someone starts heavy machinery there, it slows down for everyone. LUMI has automatic guards that will stop your processes if they use too much power in the Lobby. For such heavy processes, such as AI workloads, we use the Compute Nodes.
 
@@ -26,7 +26,7 @@ This is where the magic happens. These are thousands of individual computers equ
 > [!note] Finding your location
 > You can see your current location from the Command Line: 
 > ![uan4 Command Line](./assets/lumi_uan4.png) 
-> The `@uan4` in the Command Line indicates that you are on that login node. Compute nodes will have longer names like `nid007628`.
+> The `@uan4` in the Command Line indicates that you are on that Login Node. Compute nodes will have longer names like `nid007628`.
 
 
 ## 🏎️ Choosing Your Engine: CPU vs. GPU
@@ -68,7 +68,7 @@ Within each of those hardware Partitions%, the Slurm scheduler further divides r
 
 [👉 Full list of Slurm Partitions](https://docs.lumi-supercomputer.eu/runjobs/scheduled-jobs/partitions/)
 
-#### 🤝 Exclusive vs. Shared Nodes
+### 🤝 Exclusive vs. Shared Nodes
 When you book resources from the `standard-g` partition, Slurm allocates **entire physical nodes exclusively to you**. You are the only person running code on that machine, and you are billed for all 8 GPUs on it, even if your code only uses 1.
 
 However, if you only need 1 or 2 GPUs for a smaller task, booking a whole node would be a massive waste of resources and credits. This is where `small-g` and `dev-g` come in. These are **shared partitions**. When you request just 1 GPU on `small-g`, Slurm might place your job on the exact same physical server as another user who requested 2 GPUs. You are "sharing" the node, meaning you are both running programs on the exact same underlying operating system at the exact same time!
@@ -128,7 +128,7 @@ On a shared supercomputer, privacy behaves differently than on a personal comput
 
 [👉 Read the official LUMI Jobs and Data Privacy Guide](https://docs.lumi-supercomputer.eu/runjobs/lumi_env/privacy-on-system/) to understand visibility rules and best practices for securing sensitive information.
 
-## 🛡️ GDPR and Sensitive Data Categories
+## 🛡️ GDPR and Sensitive Data
 Beyond internal system visibility, you must also consider legal compliance before uploading datasets. When it comes to personal and sensitive information, it is important to distinguish between two types of data processing:
 
 1. **LUMI User Data:** LUMI processes personal data related to its users (such as names, organisational affiliations, and contact information) for account management and service operation. For this, LUMI acts as the data controller%. You can read more in the [Privacy Notice for processing of user data on the LUMI Service](https://lumi-supercomputer.eu/privacy-notice-for-processing-of-user-data-on-the-lumi-service/).
@@ -146,13 +146,13 @@ As an industry customer, you likely have your own datasets ready to go. To get t
 2.  **Large Datasets:** Use `scp` or `rsync` from your terminal. These tools are designed to handle gigabytes or even terabytes of data reliably.
 
 > [!warning] Data encryption%
-> Although data traffic is encrypted, data is **not** stored encrypted by default on LUMI. More sensitive data should therefore be encrypted before being added to the service.
+> Although data traffic is encrypted, data is **not** stored encrypted by default on LUMI. Sensitive data should therefore be encrypted before being added to the service.
 
 [👉 How to move your data to LUMI](https://docs.lumi-supercomputer.eu/firststeps/movingdata/)
 
 
 ## ✅ Summary Checklist
-- You understand the difference between login nodes and compute nodes.
+- You understand the difference between Login Nodes and compute nodes.
 - You understand the difference between LUMI-C and LUMI-G.
 - You know which storage tier to use for your data.
 - You understand how privacy works on shared nodes and directories.

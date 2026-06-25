@@ -58,7 +58,7 @@ If you prefer to copy and paste commands from this guide rather than typing them
 
 **Don't Panic: The First-Time Warning**
 
-When you connect for the first time, you will be asked to check the host key fingerprint of the system and need to type `yes` in order to accept it. The fingerprints of the LUMI login nodes are listed in the table below. Please make sure that the host key fingerprint matches one of these:
+When you connect for the first time, you will be asked to check the host key fingerprint of the system and need to type `yes` in order to accept it. The fingerprints of the LUMI Login Nodes are listed in the table below. Please make sure that the host key fingerprint matches one of these:
 
 | Key type | Fingerprint |
 | :--- | :--- |
@@ -89,7 +89,7 @@ If you are on a restricted work laptop where you cannot configure SSH, or if you
 
 [👉 Accessing LUMI via the Web Interface](https://docs.lumi-supercomputer.eu/firststeps/loggingin-webui/)
 
-Once you have logged into the web interface, click on the **Login node shell** button to open the Command Line% directly in your browser.
+Once you have logged into the web interface, click on the **Login Node shell** button to open the Command Line% directly in your browser.
 
 ![Logging into LUMI Command Line via web interface](./assets/LUMI_logged_in_browser.png)
 
@@ -131,7 +131,7 @@ Q: When logging into LUMI via the terminal, what happens when you type your pass
 
 ---
 
-Q: If you work from both a desktop computer and a laptop, how should you handle your SSH keys? (select all)
+Q: If you work from both a desktop computer and a laptop, how should you handle your SSH keys?
 - [ ] Copy your single Private Key to both computers.
 - [x] Generate a new, unique SSH key pair on each computer.
 - [x] Upload both Public Keys to the LUMI user portal.

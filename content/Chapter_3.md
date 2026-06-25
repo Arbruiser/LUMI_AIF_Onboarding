@@ -167,7 +167,7 @@ You can learn more about Linux Command Line on the [Linux basics tutorial for CS
 ```quiz
 title: Chapter 3 Quiz
 
-Q: Why do AI developers primarily use the Command Line Interface (CLI) instead of graphical desktops on a supercomputer? (select all)
+Q: Why do AI developers primarily use the Command Line Interface (CLI) instead of graphical desktops on a supercomputer?
 - [x] To write scripts that automate tasks.
 - [x] Because graphical desktops waste massive amounts of computational power.
 - [ ] Because graphical interfaces are more secure against hackers.

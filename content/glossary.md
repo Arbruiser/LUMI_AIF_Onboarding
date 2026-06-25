@@ -15,13 +15,10 @@ A quick reference for all technical terms used in this guide, listed by chapter.
 |:-----|:-----------|
 | **supercomputer** | A very powerful computing system made up of thousands of interconnected computers (nodes) working together. |
 | **Command Line** | A text-based interface where you type commands to interact with a computer, instead of clicking with a mouse. |
-| **HPC (High-Performance Computing)** | The use of supercomputers and parallel processing to solve large computational problems. |
+| **HPC** | High-Performance Computing. The use of supercomputers and parallel processing to solve large computational problems. |
+| **High-Performance Computing** | The use of supercomputers and parallel processing to solve large computational problems. |
 | **Terminal** | The application on your computer that provides access to the Command Line (Terminal on Mac/Linux, PowerShell on Windows). |
 | **LLM** |  Large Language Model. An AI model with billions of parameters trained on massive text datasets to understand and generate language. |
-| **GDPR** | General Data Protection Regulation. A European Union regulation concerning data protection and privacy in the EU and the EEA. |
-| **Data Controller** | Under GDPR, the entity that determines the purposes and means of processing personal data. |
-| **Data Processor** | Under GDPR, the entity that processes personal data on behalf of the data controller. |
-| **Data Processing Agreement (DPA)** | A legally binding contract between a Data Controller and a Data Processor regulating the secure handling of personal data. |
 
 ---
 
@@ -46,7 +43,8 @@ A quick reference for all technical terms used in this guide, listed by chapter.
 |:-----|:-----------|
 | **script** | A list of commands saved in a file that LUMI can execute automatically, even while you're away. |
 | **Shell** | The program that interprets and executes your typed commands. |
-| **CLI (Command Line Interface)** | Another name for the Command Line — a text-based way to interact with a computer. |
+| **CLI** | Command Line Interface. Another name for the Command Line — a text-based way to interact with a computer. |
+| **Command Line Interface** | Another name for the Command Line — a text-based way to interact with a computer. |
 | **directory** | The command-line term for "folder." |
 | **Working Directory** | The directory you are currently "inside" in the Command Line. Shown by the `pwd` command. |
 | **`$HOME`** | Your personal user directory on LUMI, located at `/users/<username>`. Where you land after logging in. |
@@ -77,6 +75,10 @@ A quick reference for all technical terms used in this guide, listed by chapter.
 | **I/O (Input/Output)** | The speed of reading from and writing to a storage drive. |
 | **GCD** | Graphics Compute Die. One independent half of an AMD MI250X GPU chip. Each MI250X contains 2 GCDs, each with its own 64 GB of VRAM. Slurm treats each GCD as a separate GPU. |
 | **encryption** | A method of protecting data by converting it into a secret format. Only people with the correct password or key can unlock and read it. |
+| **GDPR** | General Data Protection Regulation. A European Union regulation concerning data protection and privacy in the EU and the EEA. |
+| **Data Controller** | Under GDPR, the entity that determines the purposes and means of processing personal data. |
+| **Data Processor** | Under GDPR, the entity that processes personal data on behalf of the data controller. |
+| **Data Processing Agreement (DPA)** | A legally binding contract between a Data Controller and a Data Processor regulating the secure handling of personal data. |
 
 ---
 
@@ -92,7 +94,8 @@ A quick reference for all technical terms used in this guide, listed by chapter.
 | **Singularity** | The container tool used on LUMI. A secure, supercomputer-friendly alternative to Docker. |
 | **Bindings** | Configuration that allows a container to communicate with LUMI's hardware (GPUs, high-speed network). Set up by loading the `lumi-aif-singularity-bindings` module. |
 | **Runscript** | A set of default instructions baked into a container that define what happens when you `singularity run` it. |
-| **`venv` (Virtual Environment)** | A lightweight Python environment you can create on top of a container to add extra libraries. |
+| **`venv`** | Virtual Environment. A private, self-contained folder where you install Python libraries for a specific project so they do not interfere with other projects on the system. |
+| **Virtual Environment** | A private, self-contained folder where you install Python libraries for a specific project so they do not interfere with other projects on the system. |
 | **Module** | A pre-installed software package on LUMI that you activate with `module load`. |
 
 ---
@@ -121,7 +124,8 @@ A quick reference for all technical terms used in this guide, listed by chapter.
 | **Interactive Job** | A job where you get a live terminal session on a compute node for real-time work (debugging, testing). |
 | **Billing Unit (BU)** | The unit of currency for LUMI compute time. Different resources (CPU, GPU, storage) cost different amounts of BUs. |
 | **`srun`** | The command to start an interactive job or to launch a task within an allocated job. |
-| **GPU-hours / CPU-hours** | The two currencies of Billing Units on LUMI. GPU-hours are for LUMI-G, CPU-hours are for LUMI-C. |
+| **GPU-hours** | One of the two currencies of Billing Units on LUMI. Used for compute time on the LUMI-G GPU partition. |
+| **CPU-hours** | One of the two currencies of Billing Units on LUMI. Used for compute time on the LUMI-C CPU partition. |
 | **Environment Variable** | A background setting you define before running a program, which tells the program how it should behave (such as telling it which AI model to load or where to save files). |
 | **vLLM** | A fast software engine used to run LLMs efficiently. It is the recommended way to use large language models on LUMI. |
 

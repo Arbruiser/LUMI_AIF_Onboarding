@@ -1,5 +1,5 @@
 ---
-title: "Chapter 6: GitHub, the world’s collaboration platform"
+title: "Chapter 6: GitHub, the World’s Collaboration Platform"
 nav_order: 6
 ---
 

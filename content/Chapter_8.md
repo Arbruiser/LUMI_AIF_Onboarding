@@ -91,7 +91,7 @@ Q: Which of the following actions should you **avoid** doing on the Login Nodes?
 - [x] Training a machine learning model.
 - [x] Running a script that processes heavy amounts of data for a long time.
 - [ ] Submitting a batch job using Slurm.
-> The login nodes are shared by hundreds of users. Training models or running heavy data processing scripts there will slow down the entire system and your processes will be killed by automatic guards.
+> The Login Nodes are shared by hundreds of users. Training models or running heavy data processing scripts there will slow down the entire system and your processes will be killed by automatic guards.
 
 ---
 

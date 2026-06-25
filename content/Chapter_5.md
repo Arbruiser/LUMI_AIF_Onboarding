@@ -77,7 +77,7 @@ module load lumi-aif-singularity-bindings
 
 - `module purge` — Clears any previously loaded modules, giving you a clean slate. This prevents conflicts between incompatible software.
 - `module use /appl/local/laifs/modules` — Tells LUMI where to look for the AI Factory's modules. By default, LUMI only knows about its own system modules; this line adds our collection to the list.
-- `module load` lumi-aif-singularity-bindings — Activates a specific module. In this case, it sets up the necessary "bindings" that allow your container to communicate with LUMI's hardware% (GPUs, high-speed network, etc.).
+- `module load lumi-aif-singularity-bindings` — Activates a specific module. In this case, it sets up the necessary "bindings" that allow your container to communicate with LUMI's hardware% (GPUs, high-speed network, etc.).
 
 > [!note] Do not fret
 > Guides and example scripts will instruct you what modules to use. 
@@ -93,7 +93,7 @@ Besides `lumi-multitorch-latest.sif` you can see directories. The name of the di
 [👉 Read about the other types of containers that contain fewer libraries here](https://docs.lumi-supercomputer.eu/laif/software/ai-environment/).
 
 ## 🧩 What if I am Missing a Library? (Advanced)
-If you find a container that is almost perfect but is missing one specific library, you can use a Python Virtual Environment (`venv`). You create this environment on top of the container. It stores the extra bits you need in a folder, allowing you to customise your workspace without creating millions of files. If you're sure this is the route you want to take, read this guide:
+If you find a container that is almost perfect but is missing one specific library, you can use a Python Virtual Environment% (`venv`). You create this environment on top of the container. It stores the extra bits you need in a folder, allowing you to customise your workspace without creating millions of files. If you're sure this is the route you want to take, read this guide:
 
 [👉 Guide on Python Virtual Environment](https://www.w3schools.com/python/python_virtualenv.asp)
 
@@ -141,6 +141,6 @@ Q: What is the purpose of "Modules" on LUMI?
 - [ ] They are physical hardware components that you can request from the Slurm scheduler.
 - [x] They are pre-installed software packages provided by the LUMI staff that you can quickly "load" into your session.
 - [ ] They are individual Python scripts that run automatically when you log in.
-- [ ] They are specialised network cables connecting the login nodes to the compute nodes.
+- [ ] They are specialised network cables connecting the Login Nodes to the compute nodes.
 > Modules act like light switches for software. You can easily activate them with commands like `module load` to instantly get access to complex software pre-installed by the LUMI administrators.
 ```
