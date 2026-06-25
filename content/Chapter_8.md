@@ -5,7 +5,7 @@ nav_order: 8
 
 # Chapter 8: Graduation & Next Steps
 
-Congratulations! You have successfully completed the LUMI AI Factory onboarding. You've progressed from learning how to securely log in with SSH Keys (Chapter 2) and navigating the Command Line% (Chapter 3), to understanding LUMI's powerful hardware% and storage architecture (Chapter 4). You also learned how to use Apptainer% / Singularity% containers% for reproducible AI environments (Chapter 5), how to retrieve code from GitHub% (Chapter 6), and finally, how to request compute resources from Slurm% to run your first AI Job (Chapter 7). You now possess the foundational "survival skills" needed to harness one of the world's most powerful supercomputers.
+Congratulations! You have successfully completed the LUMI AI Factory onboarding. You've progressed from learning how to securely log in with SSH Keys (Chapter 2) and navigating the Command Line% (Chapter 3), to understanding LUMI's powerful hardware% and storage architecture (Chapter 4). You also learned how to use Apptainer% / Singularity% Containers% for reproducible AI environments (Chapter 5), how to retrieve code from GitHub% (Chapter 6), and finally, how to request compute resources from Slurm% to run your first AI Job (Chapter 7). You now possess the foundational "survival skills" needed to harness one of the world's most powerful supercomputers.
 
 > [!warning] We would love to hear your feedback!
 > These materials are in active development. If you have suggestions, encounter difficulties, or want to share your experience, please fill out our [short feedback form](https://link.webropolsurveys.com/S/574AE9D8B276E808). It only takes a few minutes and helps us improve the guide for everyone.
@@ -16,7 +16,7 @@ To truly graduate, let's put everything you've learned into practice with one fi
 
 The LUMI AI Guide is a 10-chapter deep dive designed to help you migrate machine learning applications from your local computer to LUMI. Instead of dry theory, you will work through a hands-on, end-to-end example: training an image classification model (PyTorch's Vision Transformer) on the ImageNet dataset.
 
-You will start with a basic Python script that runs on a laptop, and chapter-by-chapter, you will modify it to run efficiently at scale on LUMI's AMD GPUs. Along the way, you will practise everything from this onboarding—using containers%, navigating storage, and submitting Slurm% Jobs—while learning advanced concepts like distributed multi-node training. Finally, the guide covers the transition from training to production, concluding with a chapter on memory-efficient LLM inference hosting using vLLM.
+You will start with a basic Python script that runs on a laptop, and chapter-by-chapter, you will modify it to run efficiently at scale on LUMI's AMD GPUs. Along the way, you will practise everything from this onboarding—using Containers%, navigating storage, and submitting Slurm% Jobs—while learning advanced concepts like distributed multi-node training. Finally, the guide covers the transition from training to production, concluding with a chapter on memory-efficient LLM inference hosting using vLLM.
 
 Take your time with it, and remember to use the foundational "survival skills" you've acquired here!
 
@@ -128,7 +128,7 @@ Q: LUMI is a shared environment. Which of the following statements about what ot
 - [x] If you run a script on a shared Compute Node, other users on that node can see the name of the command you ran.
 - [x] Details about your submitted Slurm Jobs (like the Job name) are visible to anyone monitoring the system queue.
 - [ ] Other users can read the output and contents of the scripts you are running on shared nodes.
-> Project spaces and job queues are collaborative and visible. Shared nodes expose process names (but not file contents!).
+> Project spaces and Job queues are collaborative and visible. Shared nodes expose process names (but not file contents!).
 
 ---
 

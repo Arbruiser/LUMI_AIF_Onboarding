@@ -19,7 +19,7 @@ Upon completion of this guide, you will:
 - **Understand Secure Access:** Set up SSH Keys to connect to LUMI safely (Chapter 2).
 - **Master Command Line "Survival Skills":** Navigate the system and manage files without a mouse (Chapter 3).
 - **Navigate Hardware & Storage Tiers:** Understand CPU/GPU Partitions and where your datasets live (Chapter 4).
-- **Manage AI Environments:** Use containers for reproducible software setups (Chapter 5).
+- **Manage AI Environments:** Use Containers for reproducible software setups (Chapter 5).
 - **Retrieve Ready-to-Use Code:** Download and update pre-written code and examples directly on the supercomputer (Chapter 6).
 - **Order Compute Power:** Schedule resources and run AI Jobs using Slurm (Chapter 7).
 - **Be Prepared to Scale:** Know where to find help, access example scripts, and easily transition to the advanced [LUMI AI Guide](https://github.com/Lumi-supercomputer/LUMI-AI-Guide) (Chapter 8).

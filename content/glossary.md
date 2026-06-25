@@ -32,8 +32,9 @@ A quick reference for all technical terms used in this guide, listed by chapter.
 | **SSH Key Pair** | A pair of cryptographic keys (one public, one private) used to authenticate your identity when connecting to LUMI. |
 | **Private Key** | The secret half of your SSH Key Pair. It stays on your computer and should never be shared. |
 | **Public Key** | The shareable half of your SSH Key Pair. You upload it to the LUMI portal so LUMI can verify your identity. |
-| **passphrase** | A password that protects your private key, adding a second layer of security. |
+| **passphrase** | A password that protects your Private Key, adding a second layer of security. |
 | **string** | A sequence of characters, such as letters, numbers, and symbols, used in computing to represent text. |
+| **Key fingerprint** | A unique short sequence of characters used to identify a longer public key, allowing you to verify that you are connecting to the genuine server and not an impostor. |
 
 ---
 
@@ -68,7 +69,7 @@ A quick reference for all technical terms used in this guide, listed by chapter.
 | **Slurm Partition** | A subdivision within a hardware Partition that sets limits on Job size, duration, and number of concurrent Jobs (e.g., `standard`, `small-g`, `dev-g`). |
 | **`/project`** | Shared project storage (50 GB). Good for files the whole team needs. |
 | **`/scratch`** | High-capacity temporary storage (50 TB). Your main working area for datasets, outputs, and checkpoints. |
-| **`/flash`** | Ultra-fast temporary storage (2 TB). 3x more expensive — use only when your job needs very fast I/O. |
+| **`/flash`** | Ultra-fast temporary storage (2 TB). 3x more expensive — use only when your Job needs very fast I/O. |
 | **LUMI-C** | The CPU Partition of LUMI — nodes with powerful processors but no GPUs. |
 | **LUMI-G** | The GPU Partition of LUMI — nodes equipped with AMD MI250X GPUs for AI workloads. |
 | **walltime** | The maximum duration a Job is allowed to run before it is stopped. |
@@ -89,11 +90,11 @@ A quick reference for all technical terms used in this guide, listed by chapter.
 | **Lustre** | LUMI's high-performance filesystem, optimised for large files but sensitive to many small files. |
 | **pip** | Python's standard package manager — a tool that automatically downloads and installs Python libraries from the internet. |
 | **software** | The programs, applications, and scripts that run on the hardware to perform tasks. |
-| **container** | A single `.sif` file that packages all your software, libraries, and dependencies into one "box." |
-| **Apptainer** | The container tool used on LUMI. A secure, supercomputer-friendly alternative to Docker. |
-| **Singularity** | The container tool used on LUMI. A secure, supercomputer-friendly alternative to Docker. |
-| **Bindings** | Configuration that allows a container to communicate with LUMI's hardware (GPUs, high-speed network). Set up by loading the `lumi-aif-singularity-bindings` Module. |
-| **Runscript** | A set of default instructions baked into a container that define what happens when you `singularity run` it. |
+| **Container** | A single `.sif` file that packages all your software, libraries, and dependencies into one "box." |
+| **Apptainer** | The Container tool used on LUMI. A secure, supercomputer-friendly alternative to Docker. |
+| **Singularity** | The Container tool used on LUMI. A secure, supercomputer-friendly alternative to Docker. |
+| **Bindings** | Configuration that allows a Container to communicate with LUMI's hardware (GPUs, high-speed network). Set up by loading the `lumi-aif-singularity-bindings` Module. |
+| **Runscript** | A set of default instructions baked into a Container that define what happens when you `singularity run` it. |
 | **`venv`** | Virtual Environment. A private, self-contained folder where you install Python libraries for a specific project so they do not interfere with other projects on the system. |
 | **Virtual Environment** | A private, self-contained folder where you install Python libraries for a specific project so they do not interfere with other projects on the system. |
 | **Module** | A pre-installed software package on LUMI that you activate with `module load`. |
@@ -116,11 +117,11 @@ A quick reference for all technical terms used in this guide, listed by chapter.
 
 | Term | Definition |
 |:-----|:-----------|
-| **Slurm** | The job scheduler that manages who gets to use which Compute Nodes and when. |
+| **Slurm** | The Job scheduler that manages who gets to use which Compute Nodes and when. |
 | **Batch Script** | A text file containing Slurm options and commands that define what resources you need and what to run. |
 | **`sbatch`** | The command to submit a Batch Script to Slurm. |
-| **`squeue`** | The command to check the status of your queued or running jobs. |
-| **`scancel`** | The command to cancel a running or pending job. Use `scancel <job_id>` or `scancel --me` to cancel all your jobs. |
+| **`squeue`** | The command to check the status of your queued or running Jobs. |
+| **`scancel`** | The command to cancel a running or pending Job. Use `scancel <job_id>` or `scancel --me` to cancel all your Jobs. |
 | **Interactive Job** | A Job where you get a live Terminal session on a Compute Node for real-time work (debugging, testing). |
 | **Billing Unit (BU)** | The unit of currency for LUMI compute time. Different resources (CPU, GPU, storage) cost different amounts of BUs. |
 | **`srun`** | The command to start an Interactive Job or to launch a task within an allocated Job. |

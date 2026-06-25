@@ -4,7 +4,7 @@ nav_order: 7
 ---
 
 # Chapter 7: Ordering Compute Power (The Slurm Workload Manager)
-Now you have all the pieces of the puzzle: your data is uploaded (Chapter 4), your software% container is ready and you know how to use it (Chapter 5), and your AI code has been cloned from GitHub (Chapter 6). 
+Now you have all the pieces of the puzzle: your data is uploaded (Chapter 4), your software% Container is ready and you know how to use it (Chapter 5), and your AI code has been cloned from GitHub (Chapter 6). 
 
 But if you try to run your AI script on the Login Node right now, the system will stop it. To actually run your code on LUMI's powerful GPUs%, you need to ask the system's supervisor for permission and resources. That supervisor is called **Slurm%**.
 
@@ -23,7 +23,7 @@ The beauty of this system is that you do not need to sit at your computer waitin
 ## 📝 The Anatomy of a Slurm Ticket (Batch Script)
 To talk to Slurm, we write a simple text file (ending in `.sh`). This file always starts with a standard script header (`#!/bin/bash`) and contains two main sections right after it:
 1. Special instructions for Slurm: lines starting with `#SBATCH` that tell Slurm exactly what resources your Job is asking to book and use.
-2. The actual Command Line% commands: the specific instructions to load your environment, set necessary Environment Variables%, and run e.g., a Python AI script from within a container.
+2. The actual Command Line% commands: the specific instructions to load your environment, set necessary Environment Variables%, and run e.g., a Python AI script from within a Container.
 
 Here is what a simple AI script may look like:
 
@@ -51,7 +51,7 @@ export MIOPEN_CUSTOM_CACHE_DIR=$MIOPEN_DIR/cache
 export MIOPEN_USER_DB=$MIOPEN_DIR/config
 
 
-# 3. Run your Python AI script from inside the container
+# 3. Run your Python AI script from inside the Container
 srun singularity run /appl/local/laifs/containers/lumi-multitorch-latest.sif python3 run_ai.py
 ```
 
@@ -87,7 +87,7 @@ First, let's create the Batch Script%. Navigate to your project's `/scratch`% di
 # 1. Remove any previously loaded Modules and load the necessary ones
 module purge
 module use /appl/local/laifs/modules
-module load lumi-aif-singularity-bindings # Bindings give LUMI containers access to the file system of the Working Directory
+module load lumi-aif-singularity-bindings # Bindings give LUMI Containers access to the file system of the Working Directory
 
 
 # 2. Set necessary Environment Variables
@@ -95,7 +95,7 @@ MIOPEN_DIR=$(mktemp -d)
 export MIOPEN_CUSTOM_CACHE_DIR=$MIOPEN_DIR/cache
 export MIOPEN_USER_DB=$MIOPEN_DIR/config
 
-# We use the PyTorch container provided by the LUMI AI Factory Services, which contains vLLM - an engine library for running LLMs.
+# We use the PyTorch Container provided by the LUMI AI Factory Services, which contains vLLM - an engine library for running LLMs.
 export SIF=/appl/local/laifs/containers/lumi-multitorch-u24r70f21m50t210-20260415_130625/lumi-multitorch-full-u24r70f21m50t210-20260415_130625.sif
 
 # Redirect all vLLM cache files from $HOME to scratch.
@@ -108,7 +108,7 @@ export HF_HOME=/scratch/$SLURM_JOB_ACCOUNT/hf-cache/
 export MODEL_NAME="Qwen/Qwen3.6-35B-A3B"
 
 
-# 3. Run the python script inside the container
+# 3. Run the python script inside the Container
 srun singularity run $SIF python3 generate_text.py
 ```
 
@@ -230,7 +230,7 @@ BUs come in two currencies: **GPU-hours** (for LUMI-G) and **CPU-hours** (for LU
 > Always match your resource requests to what your workload actually needs. Running a tiny model on many GPUs wastes your project's billing allocation. You're billed for allocated resources regardless of how efficiently you have been utilising them.
 
 - **GPU Billing Rates.**
-In standard-g (full-node allocation): each LUMI-G node contains 4 MI250X GPUs (8 GCDs), so 1 node-hour equals 4 GPU-hours. GPU-hours are counted based on physical GPUs, 1 GCD = 0.5 GPU. For example, if you allocate 4 nodes and your job runs for 24 hours:
+In standard-g (full-node allocation): each LUMI-G node contains 4 MI250X GPUs (8 GCDs), so 1 node-hour equals 4 GPU-hours. GPU-hours are counted based on physical GPUs, 1 GCD = 0.5 GPU. For example, if you allocate 4 nodes and your Job runs for 24 hours:
 
 ```text
 4 nodes × 4 GPU-hours/node × 24 hours = 384 GPU-hours
@@ -269,7 +269,7 @@ title: Chapter 7 Quiz
 Q: What is Slurm?
 - [ ] LUMI's high-speed storage filesystem.
 - [x] The workload manager that schedules and allocates resources for your Jobs.
-- [ ] The software container used to run AI models.
+- [ ] The software Container used to run AI models.
 - [ ] A tool for compiling Python code into GPU instructions.
 > Slurm is the "manager" that takes your Batch Script, waits for the requested resources to become available, and then executes your commands on the Compute Nodes.
 

@@ -33,7 +33,7 @@ This is where the magic happens. These are thousands of individual computers equ
 
 **What is a CPU?** The CPU (Central Processing Unit) is the general-purpose brain of a computer. Think of it as a small team of brilliant professors — it can solve very complex problems, but only a few at a time, one after another.
 
-**What is a GPU?** The GPU (Graphics Processing Unit) is more like a stadium full of students, each doing simple arithmetic simultaneously. Originally designed to calculate the colour of millions of pixels at once for video games, researchers discovered that this massive parallel math power is exactly what AI needs. While you can train AI models on a CPU, it would be impractically slow — a job that takes hours on GPUs could take weeks on CPUs.
+**What is a GPU?** The GPU (Graphics Processing Unit) is more like a stadium full of students, each doing simple arithmetic simultaneously. Originally designed to calculate the colour of millions of pixels at once for video games, researchers discovered that this massive parallel math power is exactly what AI needs. While you can train AI models on a CPU, it would be impractically slow — a Job that takes hours on GPUs could take weeks on CPUs.
 
 LUMI is divided into several "Partitions%" (sections) depending on what kind of hardware% or service you need. The two main Partitions are:
 
@@ -116,7 +116,7 @@ On your laptop, everything is usually on one "C: Drive." On LUMI, storage is spl
 > Please remove the files that are no longer needed by your project on a regular basis. If the storage space on LUMI gets too full at some point, automatic cleaning of project scratch and flash might be enabled. In this case information would be sent to LUMI users at least three months in advance. 
 
 > [!note] Flash is fast but expensive
-> Flash is 3x more expensive per TB because it uses faster NVMe drives. Use it only when your job needs very fast Input and Output (I/O), i.e., the speed of reading from and writing to the drive.
+> Flash is 3x more expensive per TB because it uses faster NVMe drives. Use it only when your Job needs very fast Input and Output (I/O), i.e., the speed of reading from and writing to the drive.
 
 [👉 More info on LUMI Storage](https://docs.lumi-supercomputer.eu/storage/)
 

@@ -13,8 +13,8 @@ If this sounds like secret agent territory, don't worry—it is simply a more ro
 ## 🔑 What are SSH Keys? (The Lock and the Key)
 
 Think of an SSH Key Pair% like a physical lock and its matching key, but digital:
-- **The Private Key% (Your Key):** This stays on your laptop. You should never share it, email it, or move it. It is your digital identity.
-- **The Public Key% (The Lock):** You upload this to the LUMI user portal. It acts as a "lock" that only your specific Private Key can open.
+- **The Private Key% (Your key):** This stays on your laptop. You should never share it, email it, or move it. It is your digital identity.
+- **The Public Key% (The lock):** You upload this to the LUMI user portal. It acts as a "lock" that only your specific Private Key can open.
 
 > [!note] Why don't we just use passwords?
 > Passwords can be guessed, stolen via "phishing%", or intercepted. A cryptographic% SSH Key is virtually impossible to crack. Because LUMI is a billion-euro piece of infrastructure, we take this security very seriously to protect both the machine and your data.
@@ -28,7 +28,7 @@ The exact command and steps vary slightly depending on whether you are using Win
 [👉 Follow the Official guide to create and upload your SSH Keys](https://docs.lumi-supercomputer.eu/firststeps/SSH-keys/)
 
 > [!note] Choose a strong passphrase
-> When the guide asks you for a "passphrase%," choose something you can remember. This adds a second layer of security: even if someone stole your laptop, they couldn't use your key without that phrase.
+> When the guide asks you for a "passphrase%," choose something you can remember. This adds a second layer of security: even if someone stole your laptop, they couldn't use your Key without that phrase.
 
 > [!tip] Using multiple devices
 > If you use multiple computers (e.g., a laptop and a desktop), generate a new, separate Key Pair on each device. Uploading multiple Public Keys to the LUMI portal simply gives each device its own independent access — any of them will log you into the exact same LUMI account.
@@ -58,7 +58,7 @@ If you prefer to copy and paste commands from this guide rather than typing them
 
 **Don't Panic: The First-Time Warning**
 
-When you connect for the first time, you will be asked to check the host key fingerprint of the system and need to type `yes` in order to accept it. The fingerprints of the LUMI Login Nodes are listed in the table below. Please make sure that the host key fingerprint matches one of these:
+When you connect for the first time, you will be asked to check the host Key fingerprint% of the system and need to type `yes` in order to accept it. The fingerprints of the LUMI Login Nodes are listed in the table below. Please make sure that the host Key fingerprint matches one of these:
 
 | Key type | Fingerprint |
 | :--- | :--- |
@@ -66,7 +66,7 @@ When you connect for the first time, you will be asked to check the host key fin
 | RSA | `SHA256:ypbqdMWtk9ZdXEROkeEpv+3PCEXWjPLGI79IXGHe9ac` |
 | ECDSA | `SHA256:hY4mnRCYb8bRchTnVcFo7SqoHHHEsUh9Ym38F4sHN1Y` |
 
-**Where is my username and where do I upload my key?**
+**Where is my username and where do I upload my Key?**
 
 Because LUMI is a pan-European consortium, your account and Public Key are managed by the specific portal you used to gain access. This depends on where your project resources were granted from, rather than your nationality:
 - **Projects granted via CSC (Finland):** You upload your SSH Key and manage your account in your [MyCSC user profile](https://my.csc.fi/). You can also find your 8-character username (e.g., `smithmar`) by logging into [MyLUMI](https://www.lumi.csc.fi).
@@ -115,7 +115,7 @@ title: Chapter 2 Quiz
 
 Q: What is the difference between your Private Key and your Public Key?
 - [ ] The Private Key is uploaded to LUMI, while the Public Key stays on your laptop.
-- [ ] Both keys must be uploaded to the LUMI portal to work.
+- [ ] Both Keys must be uploaded to the LUMI portal to work.
 - [x] The Private Key stays on your laptop and must never be shared, while the Public Key is uploaded to LUMI.
 - [ ] The Public Key acts as a password, and the Private Key is your username.
 > Your Private Key is your secure digital identity and must remain solely on your machine. You only upload the Public Key (the "lock") to LUMI.
@@ -126,7 +126,7 @@ Q: When logging into LUMI via the Terminal, what happens when you type your pass
 - [ ] The Terminal displays asterisks (***) for each character.
 - [ ] A graphical pop-up window appears.
 - [x] Nothing appears on the screen as you type.
-- [ ] The Terminal skips the passphrase if your key is correct.
+- [ ] The Terminal skips the passphrase if your Key is correct.
 > To protect against screen recording or shoulder-surfing, the Terminal will remain completely blank as you type your passphrase. This is a normal security feature!
 
 ---
